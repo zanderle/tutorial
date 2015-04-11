@@ -1,38 +1,20 @@
 # Introduction to HTML
 
-What's a template, you may ask?
+- intro
+- HTML explaination
+- Let's create an online resume
+- HTML basics
+- cv.html, everything in it
 
-A template is a file that we can re-use to present different information in a consistent format - for example, you could use a template to help you write a letter, because although each letter might contain a different message and be addressed to a different person, they will share the same format.
-
-A Django template's format is described in a language called HTML (that's the HTML we mentioned in the first chapter __How the Internet works__).
-
-## What is HTML?
+Let's start at the basics. If we want to build a website, we first need to get familiar with HTML. Every webpage you look at is written in a language called HTML.
 
 HTML is a simple code that is interpreted by your web browser - such as Chrome, Firefox or Safari - to display a webpage for the user.
 
 HTML stands for "HyperText Markup Language". __HyperText__ means it's a type of text that supports hyperlinks between pages. __Markup__ means we have taken a document and marked it up with code to tell something (in this case, a browser) how to interpret the page. HTML code is built with __tags__, each one starting with `<` and ending with `>`. These tags represent markup __elements__.
 
-## Your first template!
+With a quick lesson in HTML, we should be able to create an online resumé for ourselves.
 
-Creating a template means creating a template file. Everything is a file, right? You have probably noticed this already.
-
-Templates are saved in `blog/templates/blog` directory. So first create a directory called `templates` inside your blog directory. Then create another directory called `blog` inside your templates directory:
-
-    blog
-    └───templates
-        └───blog
-
-(You might wonder why we need two directories both called `blog` - as you will discover later, this is simply a useful naming convention that makes life easier when things start to get more complicated.)
-
-And now create a `post_list.html` file (just leave it blank for now) inside the `blog/templates/blog` directory.
-
-See how your website looks now: http://127.0.0.1:8000/
-
-> If you still have an error `TemplateDoesNotExists`, try to restart your server. Go into command line, stop the server by pressing Ctrl+C (Control and C buttons together) and start it again by running a `python manage.py runserver` command.
-
-![Figure 11.1](images/step1.png)
-
-No error anymore! Congratulations :) However, your website isn't actually publishing anything except an empty page, because your template is empty too. We need to fix that.
+To start, lets create an HTML file that will contain our resumé. 
 
 Add the following to your template file:
 
