@@ -1,5 +1,8 @@
 # CSS - make it pretty!
 
+* Our cv looks really ugly - let's make it prettier
+
+
 Our blog still looks pretty ugly, right? Time to make it nice! We will use CSS for that.
 
 ## What is CSS?
