@@ -2,9 +2,9 @@
 
 * intro
 * HTML explaination
-* Let's create an online resume
+* Let's create a static blog or About page
 * HTML basics
-* cv.html, everything in it
+* blog.html, everything in it
 
 Let's start at the basics. If we want to build a website, we first need to get familiar with HTML. Every webpage you look at is written in a language called HTML.
 
