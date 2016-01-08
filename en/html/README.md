@@ -1,10 +1,10 @@
 # Introduction to HTML
 
-* intro
+* Introduction to HTML - what is it, why we need it
 * HTML explaination
-* Let's create a static blog or About page
+* Let's create a static blog
 * HTML basics
-* blog.html, everything in it
+* Let's put everything in a file we have created, called blog.html
 
 Let's start at the basics. If we want to build a website, we first need to get familiar with HTML. Every webpage you look at is written in a language called HTML.
 

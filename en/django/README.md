@@ -1,8 +1,7 @@
 # What is Django?
 
-* Django introduction
+* Django introduction and why we need it (relates to the next point)
 * Until now, we were looking at files directly - let's have Django serve them instead
-* Let's used a prepared project and just replace `index.html`  
 
 Django (_/ˈdʒæŋɡoʊ/ jang-goh_) is a free and open source web application framework, written in Python. A web framework is a set of components that helps you to develop websites faster and easier.
 

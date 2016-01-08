@@ -1,6 +1,6 @@
 # CSS - make it pretty!
 
-* Our blog looks really ugly - let's make it prettier
+* Review if it still applies to the changed order.
 
 
 Our blog still looks pretty ugly, right? Time to make it nice! We will use CSS for that.

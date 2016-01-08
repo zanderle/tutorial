@@ -1,5 +1,7 @@
 # How the Internet works
 
+* Review and connect it to HTML chapter
+
 > This chapter is inspired by a talk "How the Internet works" by Jessica McKellar (http://web.mit.edu/jesstess/www/).
 
 We bet you use the Internet every day. But do you actually know what happens when you type an address like http://djangogirls.org into your browser and press `enter`?

@@ -1,6 +1,6 @@
 # Django urls
 
-* Let's move the CV to /about/ and have a home page display a blog
+* Let's move the about page (if it will exist at this point) to /about/ and have a home page display a blog
 
 We're about to build our first webpage: a homepage for your blog! But first, let's learn a little bit about Django urls.
 

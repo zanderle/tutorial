@@ -1,5 +1,7 @@
 # Django templates
 
+* Review because of different order. Use {{ posts }} in later chapter (Dynamic data)
+
 Time to display some data! Django gives us some helpful built-in __template tags__ for that.
 
 ## What are template tags?
