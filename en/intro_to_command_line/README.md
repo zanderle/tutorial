@@ -1,5 +1,7 @@
 # Introduction to the command-line interface
 
+> Fix these words of encouragment:
+
 Huh, it's exciting, right?! You'll write your first line of code in just a few minutes :)
 
 __Let us introduce you to your first new friend: the command line!__
@@ -251,4 +253,4 @@ If you're curious, [ss64.com](http://ss64.com) contains a complete reference of 
 
 ## Ready?
 
-Let's dive into Python!
+Let's dive into Django!

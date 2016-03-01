@@ -1,22 +1,19 @@
 # Introduction to HTML
 
-* Introduction to HTML - what is it, why we need it
-* HTML explaination
-* Let's create a static blog
-* HTML basics
-* Let's put everything in a file we have created, called blog.html
-
 Let's start at the basics. If we want to build a website, we first need to get familiar with HTML. Every webpage you look at is written in a language called HTML.
 
 HTML is a simple code that is interpreted by your web browser - such as Chrome, Firefox or Safari - to display a webpage for the user.
 
 HTML stands for "HyperText Markup Language". __HyperText__ means it's a type of text that supports hyperlinks between pages. __Markup__ means we have taken a document and marked it up with code to tell something (in this case, a browser) how to interpret the page. HTML code is built with __tags__, each one starting with `<` and ending with `>`. These tags represent markup __elements__.
 
-With a quick lesson in HTML, we should be able to create an online resumé for ourselves.
+If you're not familiar with programming it can be hard to grasp HTML at first, but your web browsers (like Chrome, Safari, Firefox, etc.) love it. Web browsers are designed to understand this code,
+follow its instructions, and present these files that your website is made of, exactly the way you want.
 
-To start, lets create an HTML file that will contain our resumé. 
+Let's see how it works!
 
-Add the following to your template file:
+Create a new directory `djangogirls` in your home directory, where we will put everything we will work on in this tutorial.
+
+Open your favorite code editor and create a new file. Add the following to this file:
 
 ```html
 <html>
@@ -25,11 +22,19 @@ Add the following to your template file:
 </html>
 ```
 
-So how does your website look now? Click to find out: http://127.0.0.1:8000/
+Save it as `index.html` inside your `djangogirls` directory. Find it in your finder, right click on it and click `Open in browser`.
+
+Your browser will open your newly created website.
+
+> Update the images (shouldn't have localhost at this point)
 
 ![Figure 11.2](images/step3.png)
 
 It worked! Nice work there :)
+
+See what we meant that your web browser will interpret your HTML code? But wait, this is only the beginning.
+
+Let's look into some basic elements of HTML.
 
 - The most basic tag, `<html>`, is always the beginning of any webpage and `</html>` is always the end. As you can see, the whole content of the website goes between the beginning tag `<html>` and closing tag `</html>`
 - `<p>` is a tag for paragraph elements; `</p>` closes each paragraph
@@ -70,9 +75,9 @@ It's like putting things into boxes. You have one big box, `<html></html>`; insi
 
 You need to follow these rules of _closing_ tags, and of _nesting_ elements - if you don't, the browser may not be able to interpret them properly and your page will display incorrectly.
 
-## Customize your template
+## Customize your webpage
 
-You can now have a little fun and try to customize your template! Here are a few useful tags for that:
+You can now have a little fun and try to customize your webpage! Here are a few useful tags for that:
 
 - `<h1>A heading</h1>` - for your most important heading
 - `<h2>A sub-heading</h2>` for a heading at the next level
@@ -84,7 +89,7 @@ You can now have a little fun and try to customize your template! Here are a few
 - `<ul><li>first item</li><li>second item</li></ul>` makes a list, just like this one!
 - `<div></div>` defines a section of the page
 
-Here's an example of a full template:
+Here's an example of a full webpage:
 
 ```html
 <html>
@@ -120,57 +125,4 @@ It gives us this effect:
 
 ![Figure 11.4](images/step6.png)
 
-Yaaay! But so far, our template only ever displays exactly __the same information__ - whereas earlier we were talking about templates as allowing us to display __different__ information in the __same format__.
-
-What we really want to do is display real posts added in our Django admin - and that's where we're going next.
-
-## One more thing:  deploy!
-
-It'd be good to see all this out and live on the Internet, right?  Let's do another PythonAnywhere deploy:
-
-### Commit, and push your code up to Github
-
-First off, let's see what files have changed since we last deployed (run these commands locally, not on PythonAnywhere):
-
-    $ git status
-
-Make sure you're in the `djangogirls` directory and let's tell `git` to include all the changes within this directory:
-
-    $ git add -A .
-
-> __Note__ `-A` (short for "all") means that `git` will also recognize if you've deleted files (by default, it only recognizes new/modified files). Also remember (from chapter 3) that `.` means the current directory.
-
-Before we upload all the files, let's check what `git` will be uploading (all the files that `git` will upload should now appear in green):
-
-    $ git status
-
-We're almost there, now it's time to tell it to save this change in its history. We're going to give it a "commit message" where we describe what we've changed. You can type anything you'd like at this stage, but it's helpful to type something descriptive so that you can remember what you've done in the future.
-
-    $ git commit -m "Changed the HTML for the site."
-
-> __Note__ Make sure you use double quotes around the commit message.
-
-Once we've done that, we upload (push) our changes up to Github:
-
-    git push
-
-
-### Pull your new code down to PythonAnywhere, and reload your web app
-
-* Open up the [PythonAnywhere consoles page](https://www.pythonanywhere.com/consoles/) and go to your **Bash console** (or start a new one). Then, run:
-
-```
-$ cd ~/my-first-blog
-$ source myvenv/bin/activate
-(myvenv)$ git pull
-[...]
-(myvenv)$ python manage.py collectstatic
-[...]
-```
-
-And watch your code get downloaded. If you want to check that it's arrived, you can hop over to the **Files tab** and view your code on PythonAnywhere.
-
-
-* Finally, hop on over to the [Web tab](https://www.pythonanywhere.com/web_app_setup/) and hit **Reload** on your web app.
-
-Your update should be live! Go ahead and refresh your website in the browser. Changes should be visible :)
+Yaaay! But so far, our webpage looks quite dry. We can do something about that. Head to the next chapter to learn about styling a webpage.

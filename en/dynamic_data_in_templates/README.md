@@ -1,5 +1,9 @@
 # Dynamic data in templates
 
+> Add some context - (can probably relate to previous chapters) why are we doing this?
+> Update this chapter with content from Django Templates and Template Extending
+> A break after this chapter?
+
 We have different pieces in place: the `Post` model is defined in `models.py`, we have `post_list` in `views.py` and the template added. But how will we actually make our posts appear in our HTML template? Because that is what we want to do. Take some content (models saved in the database) and display it nicely in our template, right?
 
 This is exactly what *views* are supposed to do: connect models and templates. In our `post_list` *view* we will need to take models we want to display and pass them to the template. In a *view* we decide what (model) will be displayed in a template.
