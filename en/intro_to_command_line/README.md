@@ -1,8 +1,6 @@
 # Introduction to the command-line interface
 
-> Fix these words of encouragment:
-
-Huh, it's exciting, right?! You'll write your first line of code in just a few minutes :)
+If we want to create a website, we will need new ways of communicating with our computer.
 
 __Let us introduce you to your first new friend: the command line!__
 
