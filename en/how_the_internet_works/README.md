@@ -1,7 +1,6 @@
 # How the Internet works
 
-* Review and connect it to HTML chapter
-* Simplify maybe?
+> TODO Simplify maybe?
 
 > This chapter is inspired by a talk "How the Internet works" by Jessica McKellar (http://web.mit.edu/jesstess/www/).
 

@@ -26,7 +26,7 @@ Save it as `index.html` inside your `djangogirls` directory. Find it in your fin
 
 Your browser will open your newly created website.
 
-> Update the images (shouldn't have localhost at this point)
+> TODO: Update the images (shouldn't have localhost at this point)
 
 ![Figure 11.2](images/step3.png)
 

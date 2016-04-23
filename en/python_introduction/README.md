@@ -1,9 +1,9 @@
 # Introduction to Python
 
-* Strings, integers and variables explained together
-* Lists only used with for loops, dicts are just named lists
-* Drop Booleans, if else
-* Drop function definition, we only need calling
+> TODO: Strings, integers and variables explained together
+> Lists only used with for loops, dicts are just named lists
+> Drop Booleans, if else
+> Drop function definition, we only need calling
 
 > Part of this chapter is based on tutorials by Geek Girls Carrots (http://django.carrots.pl/).
 

@@ -1,6 +1,6 @@
 # Dynamic data in templates
 
-> Add some context - (can probably relate to previous chapters) why are we doing this?
+> TODO Add some context - (can probably relate to previous chapters) why are we doing this?
 > Update this chapter with content from Django Templates and Template Extending
 > A break after this chapter?
 

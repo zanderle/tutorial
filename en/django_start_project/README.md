@@ -7,11 +7,11 @@ tutorial](http://django-marcador.keimlink.de/) licensed under Creative Commons
 Attribution-ShareAlike 4.0 International License. The django-marcador tutorial
 is copyrighted by Markus Zapke-Gründemann et al.
 
+> TODO Fix the first two paragraphs
+
 We're going to create a simple blog!
 
 The first step is to start a new Django project. Basically, this means that we'll run some scripts provided by Django that will create the skeleton of a Django project for us. This is just a bunch of directories and files that we will use later.
-
-> Fix the first two paragraphs
 
 The names of some files and directories are very important for Django. You should not rename the files that we are about to create. Moving them to a different place is also not a good idea. Django needs to maintain a certain structure to be able to find important things.
 
@@ -129,6 +129,8 @@ Now all you need to do is check that your website is running. Open your browser 
     http://127.0.0.1:8000/
 
 The web server will take over your command prompt until you stop it. To type more commands whilst it is running open a new terminal window and activate your virtualenv. To stop the web server, switch back to the window in which it's running and pressing CTRL+C - Control and C buttons together (on Windows, you might have to press Ctrl+Break).
+
+> TODO Fix the following sentance.
 
 Congratulations! You've just created your first website and run it using a web server! Isn't that awesome?
 

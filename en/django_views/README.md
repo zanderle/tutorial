@@ -1,6 +1,6 @@
 # Django views - time to create!
 
-> Add some context - we'll add a view then urls yada yada
+> TODO Add some context - we'll add a view then urls yada yada. Do we need to explain request -> url -> view -> template -> response?
 
 A *view* is a place where we put the "logic" of our application. It will request information from the `model` you created before and pass it to a `template`. We'll create a template in the next chapter. Views are just Python functions that are a little bit more complicated than the ones we wrote in the __Introduction to Python__ chapter.
 

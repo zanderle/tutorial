@@ -1,6 +1,6 @@
 # Extend your application
 
-> Have a different introduction (so that it relates to previous chapters)
+> TODO Have a different introduction (so that it relates to previous chapters)
 
 We've already completed all the different steps necessary for the creation of our website: we know how to write a model, url, view and template. We also know how to make our website pretty.
 

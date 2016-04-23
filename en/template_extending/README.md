@@ -1,6 +1,6 @@
 # Template extending
 
-> Add some context - we can extract the same layout for blog and post page. Again don't use {{ posts }}. We'll do that later
+> TODO Add some context - we can extract the same layout for blog and post page. Again don't use {{ posts }}. We'll do that later
 
 Another nice thing Django has for you is __template extending__. What does this mean? It means that you can use the same parts of your HTML for different pages of your website.
 

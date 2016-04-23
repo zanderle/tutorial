@@ -1,7 +1,6 @@
 # Django urls
 
-> Let's move the about page (if it will exist at this point) to /about/ and have a home page display a blog
-
+> TODO Context - Let's move the about page (if it will exist at this point) to /about/ and have a home page display a blog
 > Fix the introduction - we've built the view, now let's connect it
 
 We're about to build our first webpage: a homepage for your blog! But first, let's learn a little bit about Django urls.
@@ -110,7 +109,7 @@ urlpatterns = [
     url(r'^$', views.post_list, name='post_list'),
 ]
 ```
-> Fix this following part: We already have the view!
+> TODO Fix this following part: We already have the view!
 
 As you can see, we're now assigning a `view` called `post_list` to `^$` URL. This regular expression will match `^` (a beginning) followed by `$` (an end) - so only an empty string will match. That's correct, because in Django URL resolvers, 'http://127.0.0.1:8000/' is not a part of the URL. This pattern will tell Django that `views.post_list` is the right place to go if someone enters your website at the 'http://127.0.0.1:8000/' address.
 

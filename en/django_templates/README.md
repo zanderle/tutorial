@@ -1,6 +1,6 @@
 # Django templates
 
-> Review because of different order. Use {{ posts }} in later chapter (Dynamic data). Use date.now and end explain we'll do template inheritance next
+> TODO: Review because of different order. Use {{ posts }} in later chapter (Dynamic data). Use date.now and end explain we'll do template inheritance next
 
 Time to display some data! Django gives us some helpful built-in __template tags__ for that.
 

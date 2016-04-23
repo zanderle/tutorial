@@ -1,6 +1,6 @@
 # Django models
 
-> Do we really need to keep objects? Without them, this chapter would be much easier to grasp
+> TODO Do we really need to keep objects? Without them, this chapter would be much easier to grasp
 
 What we want to create now is something that will store all the posts in our blog. But to be able to do that we need to talk a little bit about things called `objects`.
 
