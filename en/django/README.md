@@ -1,7 +1,11 @@
-# Why do we need Django?
+# What's our next step?
+
+So far we've seen the building blocks of every website - HTML and CSS. We used them to prepare our own webpage. But how could we show this webpage to others? And can we open our website directly from the browser, so we don't have to look for `index.html` in our finder every time? Or what if we wanted our website to be available at `/blog/` instead?
+
+In order to achieve these things, we are going to need some help. Djangoooooo.
 
 > TODO Django introduction and why we need it (relates to the next point)
-> Until now, we were looking at files directly - let's have Django serve them instead
+> Until now, we were looking at files directly - let's have Django serve them instead. Why? Urls. One step closer to internet.
 > Dynamic content? Internet history?
 
 # What is Django?
