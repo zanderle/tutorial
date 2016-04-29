@@ -1,6 +1,6 @@
 # Template extending
 
-> TODO Add some context - we can extract the same layout for blog and post page. Again don't use {{ posts }}. We'll do that later
+> TODO Replace {{ posts }} - we aren't using that. Also we need to update both post_list and about pages
 
 Another nice thing Django has for you is __template extending__. What does this mean? It means that you can use the same parts of your HTML for different pages of your website.
 
@@ -134,3 +134,35 @@ Only one thing left. We need to connect these two templates together.  This is w
 That's it! Check if your website is still working properly :)
 
 > If you have an error `TemplateDoesNotExist` that says that there is no `blog/base.html` file and you have `runserver` running in the console, try to stop it (by pressing Ctrl+C - Control and C buttons together) and restart it by running a `python manage.py runserver` command.
+
+
+## One more thing
+
+It'd be good to see if your website will still be working on the public Internet, right? Let's try deploying to PythonAnywhere again. Here's a recap of the steps...
+
+* First, push your code to Github
+
+```
+$ git status
+[...]
+$ git add -A .
+$ git status
+[...]
+$ git commit -m "Modified templates to display posts from database."
+[...]
+$ git push
+```
+
+* Then, log back in to [PythonAnywhere](https://www.pythonanywhere.com/consoles/) and go to your **Bash console** (or start a new one), and run:
+
+```
+$ cd my-first-blog
+$ git pull
+[...]
+```
+
+* Finally, hop on over to the [Web tab](https://www.pythonanywhere.com/web_app_setup/) and hit **Reload** on your web app. Your update should be live!
+
+Works like a charm? We're proud! Step away from your computer for a bit, you have earned a break. :)
+
+![Figure 13.4](images/donut.png)
