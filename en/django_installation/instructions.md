@@ -1,4 +1,4 @@
-> Part of this section is based on tutorials by Geek Girls Carrots (http://django.carrots.pl/).
+> Part of this section is based on tutorials by Geek Girls Carrots (https://github.com/ggcarrots/django-carrots).
 
 > Part of this section is based on the [django-marcador
 tutorial](http://django-marcador.keimlink.de/) licensed under Creative Commons
@@ -16,12 +16,12 @@ All you need to do is find a directory in which you want to create the `virtuale
 
 For this tutorial we will be using a new directory `djangogirls` from your home directory:
 
-    mkdir djangogirls
-    cd djangogirls
+    $ mkdir djangogirls
+    $ cd djangogirls
 
 We will make a virtualenv called `myvenv`. The general command will be in the format:
 
-    python3 -m venv myvenv
+    $ python3 -m venv myvenv
 
 ### Windows
 
@@ -39,6 +39,16 @@ It will look like this:
     $ python3 -m venv myvenv
 
 `myvenv` is the name of your `virtualenv`. You can use any other name, but stick to lowercase and use no spaces. It is also good idea to keep the name short as you'll be referencing it a lot!
+
+> __NOTE:__ On some versions of Debian/Ubuntu you may receive the following error
+
+>     The virtual environment was not created successfully because ensurepip is not available.  On Debian/Ubuntu systems, you need to install the python3-venv package using the following command.
+>       apt-get install python3-venv
+>     You may need to use sudo with that command.  After installing the python3-venv package, recreate your virtual environment.
+>
+> In this case, follow the instructions above and install the `python3-venv` package:
+>
+>     $ sudo apt-get install python3-venv
 
 > __NOTE:__ Initiating the virtual environment on Ubuntu 14.04 like this currently gives the following error:
 
@@ -80,21 +90,21 @@ OK, we have all important dependencies in place. We can finally install Django!
 
 ## Installing Django
 
-Now that you have your `virtualenv` started, you can install Django using `pip`. In the console, run `pip install django==1.8` (note that we use a double equal sign: `==`).
+Now that you have your `virtualenv` started, you can install Django using `pip`. In the console, run `pip install django~=1.9.0` (note that we use a tilde followed by an equal sign: `~=`).
 
-    (myvenv) ~$ pip install django==1.8
-    Downloading/unpacking django==1.8
+    (myvenv) ~$ pip install django~=1.9.0
+    Downloading/unpacking django==1.9
     Installing collected packages: django
     Successfully installed django
     Cleaning up...
 
 on Windows
-> If you get an error when calling pip on Windows platform please check if your project pathname contains spaces, accents or special characters (for example, `C:\Users\User Name\djangogirls`). If it does please consider moving it to another place without spaces, accents or special characters (suggestion is: `C:\djangogirls`). After the move please try the above command again.
+> If you get an error when calling pip on Windows platform please check if your project pathname contains spaces, accents or special characters (for example, `C:\Users\User Name\djangogirls`). If it does please consider using another place without spaces, accents or special characters (suggestion is: `C:\djangogirls`). Create a new virtualenv in the new directory, then delete the old one and try the above command again. (Moving the virtualenv directory won't work since virtualenv uses absolute paths.)
 
 on Windows 8 and Windows 10
 > Your command line might freeze after when you try to install Django. If this happens, instead of the above command use:
 
->     C:\Users\Name\djangogirls> python -m pip install django==1.8
+>     C:\Users\Name\djangogirls> python -m pip install django~=1.9.0
 
 on Linux
 > If you get an error when calling pip on Ubuntu 12.04 please run `python -m pip install -U --force-reinstall pip` to fix the pip installation in the virtualenv.

@@ -64,22 +64,24 @@ To keep everything tidy, we will create a separate application inside our projec
     (myvenv) ~/djangogirls$ python manage.py startapp blog
 
 You will notice that a new `blog` directory is created and it contains a number of files now. Our directories and files in our project should look like this:
-
+    
     djangogirls
-    ├── mysite
-    |       __init__.py
-    |       settings.py
-    |       urls.py
-    |       wsgi.py
+    ├── blog
+    │   ├── __init__.py
+    │   ├── admin.py
+    │   ├── apps.py
+    │   ├── migrations
+    │   │   └── __init__.py
+    │   ├── models.py
+    │   ├── tests.py
+    │   └── views.py
+    ├── db.sqlite3
     ├── manage.py
-    └── blog
-        ├── migrations
-        |       __init__.py
+    └── mysite
         ├── __init__.py
-        ├── admin.py
-        ├── models.py
-        ├── tests.py
-        └── views.py
+        ├── settings.py
+        ├── urls.py
+        └── wsgi.py
 
 After creating an application we also need to tell Django that it should use it. We do that in the file `mysite/settings.py`. We need to find `INSTALLED_APPS` and add a line containing `'blog',` just above `)`. So the final product should look like this:
 
@@ -142,11 +144,13 @@ Now we define the properties we were talking about: `title`, `text`, `created_da
 - `models.DateTimeField` - this is a date and time.
 - `models.ForeignKey` - this is a link to another model.
 
-We will not explain every bit of code here since it would take too much time. You should take a look at Django's documentation if you want to know more about Model fields and how to define things other than those described above (https://docs.djangoproject.com/en/1.8/ref/models/fields/#field-types).
+We will not explain every bit of code here since it would take too much time. You should take a look at Django's documentation if you want to know more about Model fields and how to define things other than those described above (https://docs.djangoproject.com/en/1.9/ref/models/fields/#field-types).
 
 What about `def publish(self):`? It is exactly the `publish` method we were talking about before. `def` means that this is a function/method and `publish` is the name of the method. You can change the name of the method, if you want. The naming rule is that we use lowercase and underscores instead of whitespaces. For example,  a method that calculates average price could be called `calculate_average_price`.
 
 Methods often `return` something. There is an example of that in the `__str__` method. In this scenario, when we call `__str__()` we will get a text (**string**) with a Post title.
+
+Also notice that both `def publish(self):`, and `def __str__(self):` are indented inside our class. Because Python is sensitive to whitespace, we need to indent our methods inside the class. Otherwise, the methods won't belong to the class, and you can get some unexpected behavior.
 
 If something is still not clear about models, feel free to ask your coach! We know it is complicated, especially when you learn what objects and functions are at the same time. But hopefully it looks slightly less magic for you now!
 

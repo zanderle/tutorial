@@ -1,6 +1,6 @@
 # Introduction à Python
 
-> Note : ce chapitre est en partie inspiré d'un autre tutoriel réalisé par les Geek Girls Carrots (http://django.carrots.pl/).
+> Note : ce chapitre est en partie inspiré d'un autre tutoriel réalisé par les Geek Girls Carrots (https://github.com/ggcarrots/django-carrots).
 
 Allons écrire du code !
 
@@ -19,20 +19,20 @@ $ python3
 Python 3.4.3 (...)
 Type "help", "copyright", "credits" or "license" for more information.
 >>>
-```    
+```
 
 ## Votre première commande Python !
 
 Après avoir lancé la commande Python, votre prompt (ou invite de commandes) s'est changé en `>>>`. Cela signifie que maintenant, les seules commandes que nous pouvons taper sont dans le langage Python. Vous n'avez pas besoin de taper `>>>` - Python fait ça pour vous.
 
-Quand vous voudrez sortir de la console Python, tapez `exit()` ou utilisez le raccourcit `Ctrl + Z` pour Windows ou `Ctrl + D` pour Mac/Linux. Après ça, vous ne verrez plus le `>>>`.
+Quand vous voudrez sortir de la console Python, tapez `exit()` ou utilisez le raccourci `Ctrl + Z` pour Windows ou `Ctrl + D` pour Mac/Linux. Après ça, vous ne verrez plus le `>>>`.
 
 Pour le moment, nous ne voulons pas quitter la console Python car nous nous aimerions mieux la connaitre. Démarrons avec quelque chose de vraiment simple. Par exemple, faisons un peu de math : tapez `2 + 3` et appuyez sur `entrée`.
 
 ```python
 >>> 2 + 3
 5
-```    
+```
 
 Pas mal ! Vous voyez comment la réponse est sortie ? Python sait faire des maths ! Vous pouvez essayer d'autres commandes comme : - `4 * 5` - `5 - 1` - `40 / 2`
 
@@ -40,7 +40,7 @@ Amusez-vous un peu avec ça, et revenez ici après :).
 
 Comme vous pouvez le constater, Python est une très bonne calculette. Comme vous vous en doutez, il est aussi capable de faire autre chose ...
 
-## Chaines de caractères (Strings)
+## Chaînes de caractères (Strings)
 
 Et si nous essayions avec votre nom ? Tapez votre prénom entre guillemets, comme cela :
 
@@ -49,9 +49,9 @@ Et si nous essayions avec votre nom ? Tapez votre prénom entre guillemets, comm
 'Ola'
 ```
 
-Vous venez de créer votre première chaine de caractères ! C'est une suite de caractères qui peut être traitée par un ordinateur. Une chaine de caractères doit toujours commencer et terminer par le même caractère. Çela peut être un guillemet simple (`'`) ou un guillemet double (`"`), ça n'a pas d'importance. Cela permet à Python de savoir que tout ce qui se trouve à l'intérieur de ces guillemets est une chaine de caractères.
+Vous venez de créer votre première chaîne de caractères ! C'est une suite de caractères qui peut être traitée par un ordinateur. Une chaîne de caractères doit toujours commencer et terminer par le même caractère. Cela peut être un guillemet simple (`'`) ou un guillemet double (`"`), ça n'a pas d'importance. Cela permet à Python de savoir que tout ce qui se trouve à l'intérieur de ces guillemets est une chaîne de caractères.
 
-Il est possible d'assembler des chaines de caractères comme ceci :
+Il est possible d'assembler des chaînes de caractères comme ceci :
 
 ```python
 >>> "Salut  " + "Ola"
@@ -65,7 +65,7 @@ Vous pouvez aussi multiplier une chaîne de caractères par un nombre :
 'OlaOlaOla'
 ```
 
-Si vous avez besoin de mettre une apostrophe dans votre chaine de caractères, vous avez deux possibilités.
+Si vous avez besoin de mettre une apostrophe dans votre chaîne de caractères, vous avez deux possibilités.
 
 Vous pouvez utiliser des guillemets doubles :
 
@@ -74,7 +74,7 @@ Vous pouvez utiliser des guillemets doubles :
 "J'aime la mousse au chocolat"
 ```
 
-ou échapper l’apostrophe avec une barre oblique inversée (un backslash, ``) :
+ou échapper l’apostrophe avec une barre oblique inversée (un backslash, `&#92;`) :
 
 ```python
 >>> 'J\'aime la mousse au chocolat'
@@ -86,9 +86,9 @@ Pas mal, non ? Pour voir votre nom en majuscules, tapez juste :
 ```python
 >>> "Ola".upper()
 'OLA'
-```    
+```
 
-Vous venez d'utiliser la **fonction** `upper` sur votre chaine de caractères ! Une fonction (comme `upper()`) est un ensemble d'instructions que Python va effectuer sur un objet donné (`"Ola"`) lorsque vous l’appellerez.
+Vous venez d'utiliser la **fonction** `upper` sur votre chaîne de caractères ! Une fonction (comme `upper()`) est un ensemble d'instructions que Python va effectuer sur un objet donné (`"Ola"`) lorsque vous l’appellerez.
 
 Si vous voulez savoir combien il y a de lettres dans votre nom, il y a une fonction pour ça !
 
@@ -97,14 +97,14 @@ Si vous voulez savoir combien il y a de lettres dans votre nom, il y a une fonct
 3
 ```
 
-Vous avez peut-être remarqué que parfois, on appelle la fonction avec `.` en la plaçant après la chaine de caractères (comme `"Ola".upper()`) alors qu'à d'autres moment, on appelle d'abord la fonction puis la chaine de caractères entre parenthèses ? Il s'avère que dans certains cas, les fonctions appartiennent à des objets (c'est le cas de `upper()`) et qu'elles ne peuvent être appliquées qu'à des chaines de caractères. Dans ce cas, on appelle la fonction une **méthode**. D'autres fois, les fonctions n’appartiennent à rien de particulier et peuvent être utilisées sur différents types d'objets (c'est le cas de `len()`). C'est pour ça que nous passons `"Ola"` comme argument à la fonction `len`.
+Vous avez peut-être remarqué que parfois, on appelle la fonction avec `.` en la plaçant après la chaîne de caractères (comme `"Ola".upper()`) alors qu'à d'autres moment, on appelle d'abord la fonction puis la chaîne de caractères entre parenthèses ? Il s'avère que dans certains cas, les fonctions appartiennent à des objets (c'est le cas de `upper()`) et qu'elles ne peuvent être appliquées qu'à des chaînes de caractères. Dans ce cas, on appelle la fonction une **méthode**. D'autres fois, les fonctions n’appartiennent à rien de particulier et peuvent être utilisées sur différents types d'objets (c'est le cas de `len()`). C'est pour ça que nous passons `"Ola"` comme argument à la fonction `len`.
 
 ### Résumé
 
-OK, assez parlé de chaines de caractères. Jusque-là, nous avons découvert :
+OK, assez parlé de chaînes de caractères. Jusque-là, nous avons découvert :
 
 *   **le prompt** - taper des commandes (du code) dans le prompt Python donne des réponses dans Python
-*   **les nombres et les chaines de caractères** - dans Python, les nombres sont utilisés pour faire des calculs, et les chaines de caractères pour manipuler du texte
+*   **les nombres et les chaînes de caractères** - dans Python, les nombres sont utilisés pour faire des calculs, et les chaînes de caractères pour manipuler du texte
 *   **opérateurs** - comme + et * qui combinent des valeurs pour en obtenir de nouvelles
 *   **les fonctions** - comme upper() et len() qui effectuent des actions sur les objets.
 
@@ -121,23 +121,23 @@ Traceback (most recent call last):
 TypeError: object of type 'int' has no len()
 ```
 
-Nous venons d'obtenir notre première erreur ! Elle nous dit que les objets de type "int" (integers, ce qui signifie nombre entier) n'ont pas de longueur. Que pouvons-nous faire, du coup ? Pourquoi ne pas essayer d'écrire notre nombre comme une chaine de caractères ? Après tout, les chaînes de caractères ont bien une taille, non ?
+Nous venons d'obtenir notre première erreur ! Elle nous dit que les objets de type "int" (integers, ce qui signifie nombre entier) n'ont pas de longueur. Que pouvons-nous faire, du coup ? Pourquoi ne pas essayer d'écrire notre nombre comme une chaîne de caractères ? Après tout, les chaînes de caractères ont bien une taille, non ?
 
 ```python
 >>> len(str(304023))
 6
-```    
+```
 
-Ça a marché ! Nous avons utilisé la fonction `str` à l'intérieur de la fonction `len`. La fonction `str()` convertit n'importe quoi en chaine de caractères.
+Ça a marché ! Nous avons utilisé la fonction `str` à l'intérieur de la fonction `len`. La fonction `str()` convertit n'importe quoi en chaîne de caractères.
 
-*   La fonction `str` convertit des choses en **chaines de caractères**
+*   La fonction `str` convertit des choses en **chaînes de caractères**
 *   La fonction `int` convertit des choses en **entiers**
 
 > Important : il est possible de convertir des nombres en texte, mais il n'est pas toujours possible de convertir du texte en nombres. Parce que, bon, ça vaudrait quoi `int('salut')` ?
 
 ## Variables
 
-Il y existe un concept super important en programmation : les variables. Une variable, c'est juste un nom pour quelque chose que l'on aimerait utiliser plus tard. Les programmeurs⋅euses utilisent des variables pour stocker des données, rendre leur code plus lisible, et pour ne pas avoir à se rappeler de ce que sont les choses.
+Il existe un concept super important en programmation : les variables. Une variable, c'est juste un nom pour quelque chose que l'on aimerait utiliser plus tard. Les programmeurs⋅euses utilisent des variables pour stocker des données, rendre leur code plus lisible, et pour ne pas avoir à se rappeler de ce que sont les choses.
 
 Disons que nous aimerions créer une variable appelée `name` :
 
@@ -178,7 +178,7 @@ Génial, non ? Et bien sûr, les variables peuvent être n'importe quoi, y compr
 24
 ```
 
-Mais que ce passe-t-il si nous utilisons le mauvais nom ? Essayez de deviner ! C'est parti !
+Mais que se passe-t-il si nous utilisons le mauvais nom ? Essayez de deviner ! C'est parti !
 
 ```python
 >>> city = "Tokyo"
@@ -204,13 +204,13 @@ Essayez ça :
 Maria
 ```
 
-Quand vous tapez `name`, l'interpréteur Python répond avec la *représentation* de la chaine de caractères associée à la variable "name", c'est à dire les lettres M-a-r-i-a, entourées par des guillemets simples. Quand vous dites `print(name)`, Python va "imprimer" le contenu de la variable sur l'écran, sans les guillemets, ce qui est plus sympa.
+Quand vous tapez `name`, l'interpréteur Python répond avec la *représentation* de la chaîne de caractères associée à la variable "name", c'est à dire les lettres M-a-r-i-a, entourées par des guillemets simples. Quand vous dites `print(name)`, Python va "imprimer" le contenu de la variable sur l'écran, sans les guillemets, ce qui est plus sympa.
 
 Comme nous le verrons plus tard, `print()` est aussi utile lorsque l'on veut afficher des choses depuis l'intérieur de fonctions ou des choses sur plusieurs lignes.
 
 ## Les listes
 
-En plus des chaines de caractères et des entiers, Python possède tout un tas d'autres types d'objets. Nous allons maintenant vous présenter un type appelé **listes**. Les listes sont exactement ce que vous pensez qu’elles sont : des objets qui sont des listes d’autres objets :)
+En plus des chaînes de caractères et des entiers, Python possède tout un tas d'autres types d'objets. Nous allons maintenant vous présenter un type appelé **listes**. Les listes sont exactement ce que vous pensez qu’elles sont : des objets qui sont des listes d’autres objets :)
 
 Allez-y, créez une liste :
 
@@ -288,18 +288,18 @@ Pour supprimer un objet de votre liste, vous aurez besoin de son **indice** ains
 
 Ça marche à merveille !
 
-Jouons encore un peu avec les indices ! Essayez-en des nouveaux : 6, 7, 1000, -1, -6 ou -1000. Est-ce que vous arrivez à prévoir le résultat avant de taper la commande ? Est-ce que ses résultats vous paraissent logiques ?
+Jouons encore un peu avec les indices ! Essayez-en des nouveaux : 6, 7, 1000, -1, -6 ou -1000. Est-ce que vous arrivez à prévoir le résultat avant de taper la commande ? Est-ce que ces résultats vous paraissent logiques ?
 
 Vous pouvez trouver une liste complète des méthodes disponibles pour les listes dans ce chapitre de la documentation de Python : https://docs.python.org/3/tutorial/datastructures.html
 
 ## Dictionnaires
 
-Un dictionnaire est un peu comme une liste. Cependant, nous utilisons des clefs plutôt que des indices pour accéder aux valeurs. Une clef peut être n'importe quelle chaine de caractère ou n'importe quel nombre. La syntaxe pour définir un dictionnaire vide est la suivante :
+Un dictionnaire est un peu comme une liste. Cependant, nous utilisons des clefs plutôt que des indices pour accéder aux valeurs. Une clef peut être n'importe quelle chaîne de caractère ou n'importe quel nombre. La syntaxe pour définir un dictionnaire vide est la suivante :
 
 ```python
 >>> {}
 {}
-```    
+```
 
 C'est comme ça que l'on crée un dictionnaire vide. Hourra !
 
@@ -311,8 +311,8 @@ Maintenant, essayez d'écrire la commande suivante (et essayez aussi de changer 
 
 Avec cette commande, vous venez de créer une variable nommée `participant` avec trois paires clef-valeur :
 
-*   La clef `name` pointe vers la valeur `'Ola'` (un objet `chaine de caractères`),
-*   `country` pointe vers `'Poland'` (une autre `chaine de caractères`),
+*   La clef `name` pointe vers la valeur `'Ola'` (un objet `chaîne de caractères`),
+*   `country` pointe vers `'Poland'` (une autre `chaîne de caractères`),
 *   et `favorite_numbers` pointe vers `[7, 42, 92]` (une `liste` contenant trois nombres).
 
 Vous pouvez vérifier le contenu de chaque clef avec cette syntaxe :
@@ -320,11 +320,11 @@ Vous pouvez vérifier le contenu de chaque clef avec cette syntaxe :
 ```python
 >>> print(participant['name'])
 Ola
-```    
+```
 
 Vous voyez, c'est un peu comme une liste; Cependant, vous n'avez pas besoin de vous souvenir de l'indice, juste de son nom.
 
-Que ce passe-t-il lorsque nous demandons à Python la valeur correspondant à une clef qui n'existe pas ? Pouvez-vous le deviner ? Essayons voir !
+Que se passe-t-il lorsque nous demandons à Python la valeur correspondant à une clef qui n'existe pas ? Pouvez-vous le deviner ? Essayons voir !
 
 ```python
 >>> participant['age']
@@ -405,7 +405,7 @@ True
 
 Nous avons donné à Python des nombres à comparer. Comme vous pouvez le voir, Python peut comparer des nombres, mais aussi des résultats de méthodes. Pas mal, non ?
 
-Vous vous demandez probablement pourquoi nous avons mis deux signes `==` côte à côte pour savoir si deux nombres étaient égaux ? On utilise déjà `=` pour assigner des valeurs aux variables. Du coup, il faut toujours, oui **toujours**, mettre deux `==` si vous voulez savoir si deux choses sont égales. Nous pouvons aussi dire que certaines choses ne sont pas égales à d'autres Pour cela, nous utilisons le symbole `! =`, comme illustré dans l'exemple ci-dessus.
+Vous vous demandez probablement pourquoi nous avons mis deux signes `==` côte à côte pour savoir si deux nombres étaient égaux ? On utilise déjà `=` pour assigner des valeurs aux variables. Du coup, il faut toujours, oui **toujours**, mettre deux `==` si vous voulez savoir si deux choses sont égales. Nous pouvons aussi dire que certaines choses ne sont pas égales à d'autres Pour cela, nous utilisons le symbole `!=`, comme illustré dans l'exemple ci-dessus.
 
 Donnons encore un peu de boulot à Python :
 
@@ -420,7 +420,7 @@ False
 
 *   x `>` y veut dire : x est plus grand que y
 *   x `<` y signifie: x est inférieure à y
-*   x `< =` y signifie: x est inférieur ou égal à y
+*   x `<=` y signifie: x est inférieur ou égal à y
 *   x `>=` y veut dire : x est supérieur ou égal à y
 
 Super ! Un dernier ? Essayez ça :
@@ -448,7 +448,7 @@ Traceback (most recent call last):
 TypeError: unorderable types: int() > str()
 ```
 
-Comme vous le voyez, Python n'est pas capable de comparer un nombre (`int`) et une chaine de caractères (`str`). À la place, il nous montre une **TypeError** et nous dit que les deux types ne peuvent pas être comparés.
+Comme vous le voyez, Python n'est pas capable de comparer un nombre (`int`) et une chaîne de caractères (`str`). À la place, il nous montre une **TypeError** et nous dit que les deux types ne peuvent pas être comparés.
 
 ## Booléen
 
@@ -474,7 +474,7 @@ Vous pouvez aussi faire ça :
 False
 ```
 
-Entraînez-vous et amusez-vous avec les Booleéns en essayant de lancer les commandes suivantes :
+Entrainez-vous et amusez-vous avec les Booleéns en essayant de lancer les commandes suivantes :
 
 *   `True and True`
 *   `False and True`
@@ -492,16 +492,16 @@ Pour l'instant, nous avons écrit tout notre code Python directement dans l'inte
 *   Sauvegarder du code dans un nouveau fichier Python
 *   Le lancer !
 
-Pour quitter l'interpréteur Python que nous sommes en train d'utiliser, il suffit de taper la fonction ~~~exit()~~~ :
+Pour quitter l'interpréteur Python que nous sommes en train d'utiliser, il suffit de taper la fonction `exit()` :
 
 ```python
 >>> exit()
 $
-```    
+```
 
 Cela vous ramènera dans la ligne de commande de votre système d'exploitation.
 
-Tout à l'heure, dans la section [L'éditeur de texte][2], nous avons choisi un éditeur de texte. Ouvrez le et écrivez le code suivant dans un nouveau fichier :
+Tout à l'heure, dans la section [L'éditeur de texte][2], nous avons choisi un éditeur de texte. Ouvrez-le et écrivez le code suivant dans un nouveau fichier :
 
  [2]: ../code_editor/README.md
 
@@ -509,7 +509,7 @@ Tout à l'heure, dans la section [L'éditeur de texte][2], nous avons choisi un 
 print('Hello, Django girls!')
 ```
 
-> **Note :** Vous avez probablement constaté que votre code se pare de multiples couleurs : ça fait partie des choses qui rendent la programmation dans un éditeur de texte bien plus agréable. Votre console Python n'avait pas cette fonctionnalité : tout était donc de la même couleur. Dans votre éditeur de texte, vous devriez voir que la fonction `print` possède différentes couleurs. C'est ce qu'on appelle « la coloration syntaxique ». C'est une fonctionnalité très utile lorsque l'on programme. La couleur des choses va vous permettre de détecter des problèmes : une chaine de caractères non fermée, une faute dans un mot (ce sera par exemple le cas dans la fonction `def` que vous verrez un peu plus bas). C'est ce genre de fonctionnalités qui font que vous aimerez rapidement programmer avec un éditeur de code :)
+> **Note :** Vous avez probablement constaté que votre code se pare de multiples couleurs : ça fait partie des choses qui rendent la programmation dans un éditeur de texte bien plus agréable. Votre console Python n'avait pas cette fonctionnalité : tout était donc de la même couleur. Dans votre éditeur de texte, vous devriez voir que la fonction `print` possède différentes couleurs. C'est ce qu'on appelle « la coloration syntaxique ». C'est une fonctionnalité très utile lorsque l'on programme. La couleur des choses va vous permettre de détecter des problèmes : une chaîne de caractères non fermée, une faute dans un mot (ce sera par exemple le cas dans la fonction `def` que vous verrez un peu plus bas). C'est ce genre de fonctionnalités qui font que vous aimerez rapidement programmer avec un éditeur de code :)
 
 Vous avez maintenant pas mal de connaissances en Python : n'hésitez pas à écrire du code avec ce que vous avez appris aujourd'hui !
 
@@ -520,17 +520,17 @@ Une fois que le fichier est sauvegardé, vous pouvez le lancer ! En utilisant le
 Sur Mac, ça ressemblera à :
 
     $ cd /Users/<your_name>/Desktop
-    
+
 
 Sous Linux, comme ça (il se peut que le mot Bureau soit dans une autre langue) :
 
     $ cd /home/<your_name>/Desktop
-    
+
 
 Et sous Windows, ce sera comme ça :
 
     > cd C:\Users\<your_name>\Desktop
-    
+
 
 Si vous êtes bloquée, n'hésitez pas à appeler à l'aide.
 
@@ -538,7 +538,7 @@ Maintenant, utilisez Python pour exécuter le code contenu dans votre fichier :
 
     $ python3 python_intro.py
     Hello, Django girls!
-    
+
 
 Super ! Vous venez de lancer votre premier programme python à partir d'un fichier. Cool non ?
 
@@ -561,7 +561,7 @@ $ python3 python_intro.py
 File "python_intro.py", line 2
          ^
 SyntaxError: unexpected EOF while parsing
-```    
+```
 
 Python s'attend à ce que nous lui donnions des instructions sur ce qu'il faut exécuter lorsque la condition `3 > 2` est vraie (ou plutôt, `True`). Essayons de lui faire afficher "Ça marche !". Remplacez le code dans **python_intro.py** par ceci :
 
@@ -576,7 +576,7 @@ Sauvegardez le fichier et relancez le :
 
     $ python3 python_intro.py
     Ça marche !
-    
+
 
 ### Et que se passe-t-il si une condition n’est pas vraie ?
 
@@ -593,7 +593,7 @@ Lorsque vous exécuterez le code, ceci s'affichera :
 
     $ python3 python_intro.py
     5 est effectivement plus grand que 2
-    
+
 
 Et si 2 était plus grand que 5, la seconde commande serait exécutée. Facile, non ? Voyons comment `elif` fonctionne :
 
@@ -611,7 +611,7 @@ Exécutons le code :
 
     $ python3 python_intro.py
     Hey Sonja!
-    
+
 
 Que s'est-il passé ? `elif` vous permet d'ajouter d'autres conditions à exécuter si les précédentes échouent.
 
@@ -637,7 +637,7 @@ Python va tester les différentes conditions puis il affichera ceci :
 
     $ python3 python_intro.py
     Parfait, je peux entendre tous les détails du morceau.
-    
+
 
 ### Résumé
 
@@ -673,9 +673,9 @@ Lançons notre code pour voir ce qui se passe :
     $ python3 python_intro.py
     Hi there!
     How are you?
-    
 
-C'était facile ! Construisons maintenant notre première fonction avec des paramètres. Dans l'exemple précédent, nous avions une fonction que disait "Hi there!" à la personne qui la lançait. Faisons une fonction identique, mais ajoutons un nom cette fois :
+
+C'était facile ! Construisons maintenant notre première fonction avec des paramètres. Dans l'exemple précédent, nous avions une fonction qui disait "Hi there!" à la personne qui la lançait. Faisons une fonction identique, mais ajoutons un nom cette fois :
 
 ```python
 def hi(name):
@@ -715,7 +715,7 @@ Et exécutez votre code à nouveau :
 
     $ python3 python_intro.py
     Hi Ola!
-    
+
 
 Et que se passe-t-il quand on change de nom ?
 
@@ -727,12 +727,12 @@ Exécutez votre code à nouveau :
 
     $ python3 python_intro.py
     Hi Sonja!
-    
+
 
 Maintenant, que pensez-vous qu'il se passera lorsque nous écrirons un autre nom (ni Ola, ni Sonja) ? Faites un essai et regardez si vous avez raison. Ceci devrait s'afficher :
 
     Hi anonymous!
-    
+
 
 Super, non ? Avec ça, vous n'avez pas besoin de vous répéter lorsque vous voulez changer le nom de la personne à saluer. C'est pour cette raison que nous avons besoin de fonctions : vous ne voulez pas avoir à répéter votre code !
 
@@ -749,7 +749,7 @@ Exécutons à nouveau notre code :
 
     $ python3 python_intro.py
     Hi Rachel!
-    
+
 
 Félicitations ! Vous venez juste d’apprendre à écrire des fonctions ! :)
 
@@ -771,7 +771,7 @@ Nous voulons saluer chacune d'entre elles par son nom. Nous avons déjà la fonc
 for name in girls:
 ```
 
-L'instruction ~~~for~~~ se comporte un peu comme ~~~if~~~. Le code qui suit doit donc être indenté de quatre espaces.
+L'instruction `for` se comporte un peu comme `if`. Le code qui suit doit donc être indenté de quatre espaces.
 
 Voilà le code complet à mettre dans votre fichier :
 
@@ -798,7 +798,7 @@ Exécutez votre code :
     Next girl
     Hi You!
     Next girl
-    
+
 
 Comme vous le voyez, tout ce que nous avons mis dans un `for` avec une indentation est répété pour chaque élément de la liste `girls`.
 
@@ -816,15 +816,15 @@ Ce qui affiche :
     3
     4
     5
-    
+
 
 `range` est une fonction qui crée une liste de nombres qui se suivent (c'est vous qui définissez l’intervalle à l'aide de paramètres).
 
-Vous pouvez remarquer que le second de ces nombres n'est pas inclus dans la liste que Python nous donne (ce qui signifie que `range(1, 6)` compte de 1 à 5, mais n'inclue pas 6). C'est lié au fait que "range" est à moitié ouvert. Cela signifie qu'il inclue la première valeur mais, pas la dernière.
+Vous pouvez remarquer que le second de ces nombres n'est pas inclus dans la liste que Python nous donne (ce qui signifie que `range(1, 6)` compte de 1 à 5, mais n'inclut pas 6). C'est lié au fait que "range" est à moitié ouvert. Cela signifie qu'il inclut la première valeur mais pas la dernière.
 
 ## Résumé
 
-Et voilà ! **Vous êtes géniale !** Ce chapitre était un peu compliqué et vous devriez être fière de vous ! En tout cas, nous sommes super fière de vous !
+Et voilà ! **Vous êtes géniale !** Ce chapitre était un peu compliqué et vous devriez être fière de vous ! En tout cas, nous sommes super fières de vous !
 
 N'hésitez pas à prendre une pause : étirez-vous, marchez un peu ou reposez-vous les yeux. Une fois que vous avez un peu rechargé vos batteries, vous pouvez attaquer le chapitre suivant :)
 

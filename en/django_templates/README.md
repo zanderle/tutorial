@@ -70,7 +70,7 @@ It'd be good to see if your website will still be working on the public Internet
 ```
 $ git status
 [...]
-$ git add -A .
+$ git add --all .
 $ git status
 [...]
 $ git commit -m "Modified templates to display posts from database."
@@ -86,7 +86,7 @@ $ git pull
 [...]
 ```
 
-* Finally, hop on over to the [Web tab](https://www.pythonanywhere.com/web_app_setup/) and hit **Reload** on your web app. Your update should be live!
+* Finally, hop on over to the [Web tab](https://www.pythonanywhere.com/web_app_setup/) and hit **Reload** on your web app. Your update should be live! If the blog posts on your PythonAnywhere site don't match the posts appearing on the blog hosted on your local server - that's OK. The databases on your local computer and Python Anywhere don't sync with the rest of your files.
 
 
 Congrats! Now go ahead and try adding a new post in your Django admin (remember to add published_date!) Make sure you are in the Django admin for your pythonanywhere site, https://www.yourname.pythonanywhere.com/admin. Then refresh your page to see if the post appears there.

@@ -6,7 +6,7 @@ Il est temps d'afficher des données ! Pour nous aider, Django fournit des balis
 
 En HTML, vous ne pouvez pas mettre directement du code Python car les navigateurs seraient incapables de le comprendre. Les navigateurs ne connaissent que le HTML. Nous vous avons signalé précédemment que HTML est du genre statique, alors que Python est bien plus dynamique.
 
-Les **Balises de template Django** nous permettent de transferer des choses ressemblant à du Python dans du HTML afin de nous permettre de construire des sites web plus rapidement et facilement. Cool, non ?
+Les **Balises de template Django** nous permettent de transférer des choses ressemblant à du Python dans du HTML afin de nous permettre de construire des sites web plus rapidement et facilement. Cool, non ?
 
 ## Template d'affichage de la liste des posts
 
@@ -66,40 +66,40 @@ Essayez ceci dans votre template.
 
  [3]: images/step3.png
 
-Avez-vous remarqué que nous utilisons une notation légèrement différente cette fois (`{{ post.title }}` or `{{ post.text }}`) ? Nous accédons aux données associées à chaque champ défini dans notre modèle `Post`. De même, les `|barres verticales` nous permettent de rediriger le texte des posts à travers un filtre qui convertit automatiquement les fins de lignes en paragraphes.
+Avez-vous remarqué que nous utilisons une notation légèrement différente cette fois (`{{ post.title }}` or `{{ post.text }}`) ? Nous accédons aux données associées à chaque champ défini dans notre modèle `Post`. De même, les barres verticales `|` nous permettent de rediriger le texte des posts à travers un filtre qui convertit automatiquement les fins de lignes en paragraphes.
 
 ## Encore une chose !
 
 Maintenant, ça serait bien de voir si votre site Web fonctionne toujours sur Internet. Nous allons essayer de le re-déployer sur PythonAnywhere. Voici un récapitulatif des étapes...
 
 *   En premier lieu, envoyez votre code sur GitHub (push)
-
+```
     $ git status
     [...]
-    $ git add -A .
+    $ git add --all .
     $ git status
     [...]
     $ git commit -m "Modified templates to display posts from database."
     [...]
     $ git push
-    
+```
 
-*   Ensuite, reconnectez-vous à [PythonAnywhere][4] et allez sur la "**Bash console**" (ou démarrer-en une nouvelle), et lancez les commandes suivantes :
+*   Ensuite, reconnectez-vous à [PythonAnywhere][4] et allez sur la "**Bash console**" (ou démarrez-en une nouvelle), et lancez les commandes suivantes :
 
  [4]: https://www.pythonanywhere.com/consoles/
-
+```
     $ cd my-first-blog
     $ git pull
     [...]
-    
+```
 
 *   Finalement, allez sur l'[onglet Web][5] et cliquez sur **Reload** sur votre application web. Votre site mis-à-jour devrait être en ligne !
 
  [5]: https://www.pythonanywhere.com/web_app_setup/
 
-Félicitations ! Maintenant, pourquoi ne pas essayer d'ajouter un nouveau post à l'aide de l'interface d'administration ? N'oubliez pas d'ajouter une date de publication ! Ensuite, rafraîchissez votre page et regardez si votre post apparaît.
+Félicitations ! Maintenant, pourquoi ne pas essayer d'ajouter un nouveau post à l'aide de l'interface d'administration ? N'oubliez pas d'ajouter une date de publication ! Ensuite, rafraichissez votre page et regardez si votre post apparait.
 
-Ça a marché ? Nous sommes super fière de vous ! Éloignez vous un peu de votre clavier maintenant : vous avez mérité de faire une pause. :)
+Ça a marché ? Nous sommes super fières de vous ! Éloignez vous un peu de votre clavier maintenant : vous avez mérité de faire une pause. :)
 
 ![Figure 13.4][6]
 

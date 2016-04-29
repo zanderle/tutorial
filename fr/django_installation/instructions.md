@@ -1,4 +1,4 @@
-> Note : ce chapitre est en partie inspiré d'un autre tutoriel réalisé par les Geek Girls Carrots (http://django.carrots.pl/).
+> Note : ce chapitre est en partie inspiré d'un autre tutoriel réalisé par les Geek Girls Carrots (https://github.com/ggcarrots/django-carrots).
 > 
 > Ce chapitre est en partie inspiré du [tutoriel django-marcador](http://django-marcador.keimlink.de/) qui est sous licence Creative Commons Attribution-ShareAlike 4.0 International License. Le tutoriel django-marcador a été créé par Markus Zapke-Gründemann et al.
 
@@ -93,10 +93,10 @@ Ok, nous avons installé toutes les dépendances dont nous avions besoin. Nous a
 
 ## Installation de Django
 
-Maintenant que vous avez lancé votre `virtualenv`, vous pouvez installer Django à l'aide de `pip`. Dans votre console, tapez `pip install django==1.8`. Notez bien que nous utilisons un double signe égal : `==`).
+Maintenant que vous avez lancé votre `virtualenv`, vous pouvez installer Django à l'aide de `pip`. Dans votre console, tapez `pip install django~=1.9.0`. Notez bien que nous utilisons un tilde suivi du signe égal : `~=`).
 
-    (myvenv) ~$ pip install django==1.8
-    Downloading/unpacking django==1.8
+    (myvenv) ~$ pip install django~=1.9.0
+    Downloading/unpacking django==1.9
     Installing collected packages: django
     Successfully installed django
     Cleaning up...
