@@ -1,35 +1,10 @@
 # Django models
 
-> TODO Do we really need to keep objects? Without them, this chapter would be much easier to grasp
+> TODO Add context and do this chapter without OOP
 
-What we want to create now is something that will store all the posts in our blog. But to be able to do that we need to talk a little bit about things called `objects`.
+What we want to create now is something that will store all the posts in our blog.
 
-## Objects
-
-There is a concept in programming called `Object-oriented programming`. The idea is that instead of writing everything as a boring sequence of programming instructions we can model things and define how they interact with each other.
-
-So what is an object? It is a collection of properties and actions. It sounds weird, but we will give you an example.
-
-If we want to model a cat we will create an object `Cat` that has some properties such as: `color`, `age`, `mood` (like good, bad, or sleepy ;)), and `owner` (that is a `Person` object or maybe, in case of a stray cat, this property is empty).
-
-Then the `Cat` has some actions: `purr`, `scratch`, or `feed` (in which case, we will give the cat some `CatFood`, which could be a separate object with properties, like `taste`).
-
-    Cat
-    --------
-    color
-    age
-    mood
-    owner
-    purr()
-    scratch()
-    feed(cat_food)
-
-
-    CatFood
-    --------
-    taste
-
-So basically the idea is to describe real things in code with properties (called `object properties`) and actions (called `methods`).
+> NOTE: There is a concept in programming called `Object-oriented programming`. The idea is that instead of writing everything as a boring sequence of programming instructions we can model things and define how they interact with each other.
 
 How will we model blog posts then? We want to build a blog, right?
 
@@ -64,6 +39,8 @@ You can think of a model in the database as a spreadsheet with columns (fields) 
 In the `blog/models.py` file we define all objects called `Models` - this is a place in which we will define our blog post.
 
 Let's open `blog/models.py`, remove everything from it and write code like this:
+
+> TODO: Remove `publish()` and `__str__`. We can define them when we need them
 
 ```python
 from django.db import models
