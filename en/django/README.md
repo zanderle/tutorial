@@ -2,11 +2,7 @@
 
 So far we've seen the building blocks of every website - HTML and CSS. We used them to prepare our own webpage. But how could we show this webpage to others? And can we open our website directly from the browser, so we don't have to look for `index.html` in our finder every time? Or what if we wanted our website to be available at `/blog/` instead?
 
-In order to achieve these things, we are going to need some help. Djangoooooo.
-
-> TODO Django introduction and why we need it (relates to the next point)
-> Until now, we were looking at files directly - let's have Django serve them instead. Why? Urls. One step closer to internet.
-> Dynamic content? Internet history?
+In order to achieve these things, we are going to need some help. Enter Django.
 
 # What is Django?
 
@@ -25,6 +21,8 @@ To understand what Django actually is for, we need to take a closer look at the 
 Imagine a mailbox (port) which is monitored for incoming letters (requests). This is done by a web server. The web server reads the letter, and sends a response with a webpage. But when you want to send something, you need to have some content. And Django is something that helps you create the content.
 
 ## What happens when someone requests a website from your server?
+
+> TODO: Maybe simplify this part (do we really need it at this point, or can we move it in later chapters?)
 
 When a request comes to a web server it's passed to Django which tries to figure out what actually is requested. It takes a webpage address first and tries to figure out what to do. This part is done by Django's __urlresolver__ (note that a website address is called a URL - Uniform Resource Locator - so the name *urlresolver* makes sense). It is not very smart - it takes a list of patterns and tries to match the URL. Django checks patterns from top to the bottom and if something is matched then Django passes the request to the associated function (which is called *view*).
 
