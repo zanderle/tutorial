@@ -1,9 +1,6 @@
 # Django urls
 
-> TODO Context - Let's move the about page (if it will exist at this point) to /about/ and have a home page display a blog
-> Fix the introduction - we've built the view, now let's connect it
-
-We're about to build our first webpage: a homepage for your blog! But first, let's learn a little bit about Django urls.
+We have our template, we have our view, but Django doesn't know where to use it. Let's define what URL we want to show this view and template at.
 
 ## What is a URL?
 
@@ -34,7 +31,7 @@ As you can see, Django already put something here for us.
 
 Lines that start with `#` are comments - it means that those lines won't be run by Python. Pretty handy, right?
 
-The admin URL, which you visited in previous chapter is already here:
+The admin URL, which we will visit in the following chapters is already here:
 
 ```python
     url(r'^admin/', include(admin.site.urls)),
@@ -109,18 +106,66 @@ urlpatterns = [
     url(r'^$', views.post_list, name='post_list'),
 ]
 ```
-> TODO Fix this following part: We already have the view!
 
-As you can see, we're now assigning a `view` called `post_list` to `^$` URL. This regular expression will match `^` (a beginning) followed by `$` (an end) - so only an empty string will match. That's correct, because in Django URL resolvers, 'http://127.0.0.1:8000/' is not a part of the URL. This pattern will tell Django that `views.post_list` is the right place to go if someone enters your website at the 'http://127.0.0.1:8000/' address.
+> TODO: Add about page as well (create view, template and url)
+
+As you can see, we're now assigning our `post_list` view to `^$` URL. This regular expression will match `^` (a beginning) followed by `$` (an end) - so only an empty string will match. That's correct, because in Django URL resolvers, 'http://127.0.0.1:8000/' is not a part of the URL. This pattern will tell Django that `views.post_list` is the right place to go if someone enters your website at the 'http://127.0.0.1:8000/' address.
 
 The last part `name='post_list'` is the name of the URL that will be used to identify the view. This can be the same as the name of the view but it can also be something completely different. We will be using the named URLs later in the project so it is important to name each URL in the app. We should also try to keep the names of URLs unique and easy to remember.
 
 Everything all right? Open http://127.0.0.1:8000/ in your browser to see the result.
 
-![Error](images/error1.png)
+> TODO: add missing image
 
-There is no "It works" anymore, huh? Don't worry, it's just an error page, nothing to be scared of! They're actually pretty useful:
+By this same procedure you can also add other pages and link them to their own URL. Let's try.
 
-You can read that there is __no attribute 'post_list'__. Is *post_list* reminding you of anything? This is what we called our view! This means that everything is in place but we just haven't created our *view* yet. No worries, we will get there.
+It would be great if your blog had an 'about' section, where people could read more about you and your blog. Just as before, we first need to create a template for our page. Create a new file in `blog/templates` and name it `about.html`. Inside, copy-paste the part of `index.html` that we want to keep (we want the same styling, menu, and title).
+
+```html
+<html>
+    <head>
+        <title>Django Girls blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="blog.css">
+    </head>
+    <body>
+        <div class="page-header">
+            <h1><a href="/">Django Girls Blog</a></h1>
+        </div>
+    </body>
+</html>
+```
+
+Then add some information about yourself and about this blog.
+
+> TODO: Add an example
+
+After that, we need to create a new view.
+
+```python
+def about(request):
+    return render(request, 'blog/about.html', {})
+```
+
+Just like before, this will render our template. What else are we missing? Right, we need to connect this view to an URL.
+In your `urlpatterns` you can add a new URL pattern for `about` view by adding `url(r'^about/$', views.about, name='about')`.
+
+So now your `blog/urls.py` should look something like this:
+
+```python
+from django.conf.urls import url
+from . import views
+
+urlpatterns = [
+    url(r'^$', views.post_list, name='post_list'),
+    url(r'^about/$', views.about, name='about'),
+]
+```
+
+Open http://127.0.0.1:8000/about in your browser to see if it worked.
+
+
+Great job! You now have your very own website on your computer. Lets share it with the world.
 
 > If you want to know more about Django URLconfs, look at the official documentation: https://docs.djangoproject.com/en/1.8/topics/http/urls/
