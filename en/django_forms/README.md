@@ -49,7 +49,7 @@ It's time to open `blog/templates/blog/base.html`. We will add a link in `div` n
 <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
 ```
 
-Note that we want to call our new view `post_new`. The class `"glyphicon glyphicon-plus"` is provided by the bootstrap theme we are using, and will display a plus sign for us. 
+Note that we want to call our new view `post_new`. The class `"glyphicon glyphicon-plus"` is provided by the bootstrap theme we are using, and will display a plus sign for us.
 
 After adding the line, your html file should now look like this:
 
@@ -98,7 +98,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.post_list, name='post_list'),
-    url(r'^post/(?P<pk>[0-9]+)/$', views.post_detail, name='post_detail'),
+    url(r'^post/(?P<pk>\d+)/$', views.post_detail, name='post_detail'),
     url(r'^post/new/$', views.post_new, name='post_new'),
 ]
 ```
@@ -285,7 +285,7 @@ so that the template will look like:
 In `blog/urls.py` we add this line:
 
 ```python
-    url(r'^post/(?P<pk>[0-9]+)/edit/$', views.post_edit, name='post_edit'),
+    url(r'^post/(?P<pk>\d+)/edit/$', views.post_edit, name='post_edit'),
 ```
 
 We will reuse the template `blog/templates/blog/post_edit.html`, so the last missing thing is a *view*.
@@ -332,7 +332,7 @@ Feel free to change the title or the text and save changes!
 
 Congratulations! Your application is getting more and more complete!
 
-If you need more information about Django forms you should read the documentation: https://docs.djangoproject.com/en/1.8/topics/forms/
+If you need more information about Django forms you should read the documentation: https://docs.djangoproject.com/en/1.9/topics/forms/
 
 ## Security
 
@@ -380,7 +380,7 @@ Let's see if all this works on PythonAnywhere. Time for another deploy!
 
 ```
 $ git status
-$ git add -A .
+$ git add --all .
 $ git status
 $ git commit -m "Added views to create/edit blog post inside the site."
 $ git push
@@ -390,10 +390,7 @@ $ git push
 
 ```
 $ cd my-first-blog
-$ source myvenv/bin/activate
-(myvenv)$ git pull
-[...]
-(myvenv)$ python manage.py collectstatic
+$ git pull
 [...]
 ```
 

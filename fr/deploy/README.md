@@ -34,51 +34,55 @@ Git conserve toutes les modifications apportées à un ensemble de fichiers dans
     Initialise un dépôt Git vide à l'emplacement ~/djangogirls/.git/
     $ git config --global user.name "Votre nom"
     $ git config --global user.email you@exemple.com
-    
+
 
 L'initialisation d'un dépôt git ne se fait qu'une fois par projet. De même, vous n'aurez plus jamais à ré-entrer votre nom d'utilisateur ou votre email.
 
 Git va surveiller et conserver les modifications concernant l'ensemble des fichiers et dossiers présents dans ce répertoire, à l'exception de certains fichiers que nous aimerions exclure. Pour cela, nous allons créer un fichier appelé `.gitignore` dans le répertoire principal du projet. Ouvrez votre éditeur et créez un nouveau fichier en copiant le contenu suivant :
 
-    *.pyc
-    __pycache__
-    myvenv
-    db.sqlite3
-    .DS_Store
-    
+```
+*.pyc
+__pycache__
+myvenv
+db.sqlite3
+/static
+.DS_Store
+```
 
 Enregistrez ce fichier `.gitignore` dans votre répertoire principal "djangogirls".
 
-> **Attention** : le point au début du nom du fichier est important ! Vous pouvez parfois rencontrer des difficultés à créer ce fichier. Par exemple, Mac ne vous laisse pas enregistrer un fichier qui commence par un point dans Finder. Pour contourner ce problème, utilisez la fonction "enregistrer sous" de votre éditeur : ça marche à tous les coups !
+> **Attention**: le point au début du nom du fichier est important ! Vous pouvez parfois rencontrer des difficultés à créer ce fichier. Par exemple, Mac ne vous laisse pas enregistrer un fichier qui commence par un point dans Finder. Pour contourner ce problème, utilisez la fonction "enregistrer sous" de votre éditeur : ça marche à tous les coups!
 
-Avant de taper la commande `git add` ou lorsque vous ne vous souvenez plus des changements que vous avez effectué dans votre projet, pensez à taper la commande `git status`. Cela permet surtout d'éviter les mauvaises surprises, comme l'ajout ou l'envoi d'un mauvais fichiers. La commande `git status` permet d'obtenir des informations sur tous les fichiers non-suivis/modifiés/mis-à-jour, l'état de la branche, et bien plus encore. Voici ce qui se passe lorsque vous tapez cette commande :
+> **Note** L'un des fichiers spécifiés dans `.gitignore` est `db.sqlite3`. Ce fichier est votre base de donnée locale, où tous vos posts de blog sont stockés. Ce fichier n'est pas ajouté à la base de données parce que votre site internet sur PythonAnywhere utilise une base de donnée différente.  Cette base de donnée peut être en SQLite, comme celle créée localement sur votre ordinateur mais en général, une base de données appelée MySQL est utilisée parce qu'elle peut gérer beaucoup plus de visiteurs qu'une base de données SQLite. Dans tous les cas, ignorer votre base de donneés SQLite pour la copie sur GitHub signifie que tous les posts que vous avez créé jusqu'à maintenant vont rester sur votre machine locale et ne seront accessible que depuis cette machine. Vous allez devoir les ajouter à nouveau sur votre site internet en production. Considérez votre base de données locale comme une aire de jeu où vous pouvez essayer des choses différentes sans vous souciez de supprimer un de vos vrais post de blog.
+
+Avant de taper la commande `git add` ou lorsque vous ne vous souvenez plus des changements que vous avez effectué dans votre projet, pensez à taper la commande `git status`. Cela permet surtout d'éviter les mauvaises surprises, comme l'ajout ou l'envoi d'un mauvais fichier. La commande `git status` permet d'obtenir des informations sur tous les fichiers non-suivis/modifiés/mis-à-jour, l'état de la branche, et bien plus encore. Voici ce qui se passe lorsque vous tapez cette commande :
 
     $ git status
     On branch master
-    
+
     Initial commit
-    
+
     Untracked files:
       (use "git add <file>..." to include in what will be committed)
-    
+
             .gitignore
             blog/
             manage.py
             mysite/
-    
+
     nothing added to commit but untracked files present (use "git add" to track)
-    
+
 
 Pour le moment, nous n'avons fait que regarder l'état de notre branche. Pour enregistrer nos changements, nous allons devoir taper les commandes suivantes :
 
-    $ git add -A .
+    $ git add --all .
     $ git commit -m "My Django Girls app, first commit"
      [...]
      13 files changed, 200 insertions(+)
      create mode 100644 .gitignore
      [...]
      create mode 100644 mysite/wsgi.py
-    
+
 
 ## Publier votre code sur GitHub
 
@@ -100,23 +104,23 @@ La page suivante vous donne l'URL qui va vous permettre de cloner votre dépôt.
 
 Nous avons maintenant besoin de relier nos deux dépôts : celui sur notre ordinateur et celui sur GitHub. On utilise l'expression "hook" en anglais pour cette décrire cette étape.
 
-Tapez les instructions suivantes dans votre console (remplacez `<your-github-username>` avec le nom d'utilisateur de votre compte GitHub et sans les chevrons) :
+Tapez les instructions suivantes dans votre console (remplacez `<votre-nom-d'utilisateur-github>` avec le nom d'utilisateur de votre compte GitHub et sans les chevrons) :
 
     $ git remote add origin https://github.com/<votre-nom-d'utilisateur-github>/my-first-blog.git
     $ git push -u origin master
-    
+
 
 Entrez votre nom d'utilisateur et mot de passe Github. Vous devriez voir quelque chose comme ceci :
 
-    Username for 'https://github.com': votre-nom 
-    Password for 'https://votre-nom@github.com': 
+    Username for 'https://github.com': votre-nom
+    Password for 'https://votre-nom@github.com':
     Counting objects: 6, done.
     Writing objects: 100% (6/6), 200 bytes | 0 bytes/s, done.
     Total 3 (delta 0), reused 0 (delta 0)
     To https://github.com/votre-nom/my-first-blog.git
      * [new branch]      master -> master
     Branch master set up to track remote branch master from origin.
-    
+
 
 <!--TODO: maybe do ssh keys installs in install party, and point ppl who dont have it to an extention -->
 
@@ -137,10 +141,10 @@ Une fois enregistré sur PythonAnywhere, vous serez automatiquement redirigée s
 
 > **Note** : PythonAnywhere utilise Linux. Si vous êtes sous Windows, la console sera un peu différente de celle de votre ordinateur.
 
-Importons notre code depuis Github vers PythonAnywhere en créant un "clone" de notre déôpt. Tapez la commande suivante dans la console de PythonAnywhere (n'oubliez pas d'utiliser votre nom d'utilisateur Github à la place de `<your-github-username>`):
+Importons notre code depuis Github vers PythonAnywhere en créant un "clone" de notre dépôt. Tapez la commande suivante dans la console de PythonAnywhere (n'oubliez pas d'utiliser votre nom d'utilisateur Github à la place de `<your-github-username>`):
 
     $ git clone https://github.com/<votre-nom-d'utilisateur-github>/my-first-blog.git
-    
+
 
 Cette commande va permettre d'effectuer une copie de votre code vers PythonAnywhere. La commande `tree my-first-blog` permet d'afficher un aperçu de ce qui se trouve maintenant sur votre serveur :
 
@@ -161,65 +165,37 @@ Cette commande va permettre d'effectuer une copie de votre code vers PythonAnywh
         ├── settings.py
         ├── urls.py
         └── wsgi.py
-    
+
 
 ### Créer un virtualenv sur PythonAnywhere
 
 Tout comme sur votre ordinateur, vous allez devoir créer un environnement virtuel et installer Django sur PythonAnywhere. L'opération est identique, à une différence près pour les utilisatrices de Windows : il s'agit ici d'une console Linux. Pas de panique, c'est très simple ! Ouvrez la console Bash de PythonAnywhere et tapez les commandes suivantes :
 
     $ cd my-first-blog
-    
+
     $ virtualenv --python=python3.4 myvenv
     Running virtualenv with interpreter /usr/bin/python3.4
     [...]
     Installing setuptools, pip...done.
-    
+
     $ source myvenv/bin/activate
-    
-    (mvenv) $  pip install django whitenoise
+
+
+    (mvenv) $  pip install django~=1.9.0
     Collecting django
     [...]
-    Successfully installed django-1.8.2 whitenoise-2.0
-    
+    Successfully installed django-1.9
+
 
 > **Note** : L'étape `pip install` peut prendre quelques minutes. Patience, patience ! Cependant, si cela prend plus de 5 minutes, c'est que quelque chose ne va pas. N'hésitez pas à solliciter votre coach.
 
 <!--TODO: think about using requirements.txt instead of pip install.-->
 
-### Collecter les fichiers statiques.
 
-Mais qu'est-ce que "whitenoise" ? C'est un outil qui permet de servir des "fichiers statiques". Les fichiers statiques sont des fichiers qui ne changement que très rarement ou qui n’exécutent pas de code de programmation. C'est le cas des fichiers HTML ou CSS. Les fichiers statiques ne se comportent pas de la même façon sur un serveur et sur votre ordinateur : nous avons besoin d'un outil comme "whitenoise" pour qu'ils soient servis.
-
-Pour le moment, vous n'avez pas besoin d'en savoir plus ! Ne vous inquiétez pas : nous reviendrons plus tard sur les fichiers statiques (partie CSS). L'objectif de ce chapitre est de poser toutes les bases nécessaires au déploiement pour passer rapidement à la suite :)
-
-Pour l'instant, il ne nous reste juste qu'à exécuter une dernière commande sur notre serveur : `collectstatic`. Cette instruction va permettre à Django de rassembler tous les fichiers statiques dont il va avoir besoin sur le serveur. Pour le moment, il s'agit surtout des fichiers qui servent à rendre l'interface d'administration plus jolie.
-
-    (mvenv) $ python manage.py collectstatic
-    
-    You have requested to collect static files at the destination
-    location as specified in your settings:
-    
-        /home/edith/my-first-blog/static
-    
-    This will overwrite existing files!
-    Are you sure you want to do this?
-    
-    Type 'yes' to continue, or 'no' to cancel: yes
-    
-
-Tapez "yes", et c'est parti ! Personnellement, j'adore accompagner l'affichage de ces longues listes de texte impénétrable par un bruit de vieille imprimante : brp, brp, brp...
-
-    Copying '/home/edith/my-first-blog/mvenv/lib/python3.4/site-packages/django/contrib/admin/static/admin/js/actions.min.js'
-    Copying '/home/edith/my-first-blog/mvenv/lib/python3.4/site-packages/django/contrib/admin/static/admin/js/inlines.min.js'
-    [...]
-    Copying '/home/edith/my-first-blog/mvenv/lib/python3.4/site-packages/django/contrib/admin/static/admin/css/changelists.css'
-    Copying '/home/edith/my-first-blog/mvenv/lib/python3.4/site-packages/django/contrib/admin/static/admin/css/base.css'
-    62 static files copied to '/home/edith/my-first-blog/static'.
-    
 
 ### Créer une base de données sur PythonAnywhere
 
-Tout comme l'environnement virtuel, la base de données n'est pas partagée entre le serveur et votre ordinateur. Cela signifie, entre autre, que vous n'aurez plus forcément les mêmes utilisateurs et les mêmes posts sur votre ordinateur et sur PythonAnywhere.
+Tout comme l'environnement virtuel, la base de données n'est pas partagée entre le serveur et votre ordinateur. Cela signifie, entre autre, que vous n'aurez plus forcément les mêmes utilisateurs ni les mêmes posts sur votre ordinateur et sur PythonAnywhere.
 
 Pour créer une base de données sur PythonAnywhere, nous allons taper les mêmes commandes que sur notre ordinateur: d'abord `migrate`, puis `createsuperuser`:
 
@@ -227,14 +203,14 @@ Pour créer une base de données sur PythonAnywhere, nous allons taper les même
     Operations to perform:
     [...]
       Applying sessions.0001_initial... OK
-    
-    
+
+
     (mvenv) $ python manage.py createsuperuser
-    
+
 
 ## Faire de votre blog une application web
 
-Maintenant, notre code est sur PythonAnywhere, notre virtualenv est prêt, les fichiers statiques sont recueillis et la base de données est initialisé. Nous sommes prêts à le publier comme une application web !
+Maintenant, notre code est sur PythonAnywhere, notre virtualenv est prêt, les fichiers statiques sont recueillis et la base de données est initialisée. Nous sommes prêts à le publier comme une application web !
 
 Retourner sur la page d'accueil de PythonAnywhere en cliquant sur le logo en haut à gauche. Ensuite, cliquez sur l'onglet **Web** et **Add a new web app**.
 
@@ -250,7 +226,7 @@ Une fois l'assistant fermé, vous serez automatiquement conduite sur la page de 
 
  [7]: images/pythonanywhere_web_tab_virtualenv.png
 
-Dans la section "Virtualenv", cliquez sur le texte en rouge qui indique "Enter the path to a virtualenv" (ajouter le chemin d'accès de votre environnement virtuel), et ajouter ceci : */home/<your-username>nomdutilisateur</1>/my-first-blog/myvenv/*. Cliquez sur la boite bleue avec la case à cocher pour sauvegarder le chemin d’accès.
+Dans la section "Virtualenv", cliquez sur le texte en rouge qui indique "Enter the path to a virtualenv" (ajouter le chemin d'accès de votre environnement virtuel), et ajouter ceci : */home/<your-username>/my-first-blog/myvenv/*. Cliquez sur la boite bleue avec la case à cocher pour sauvegarder le chemin d’accès.
 
 > **Note** : N'oubliez pas de mettre votre nom d'utilisateur. Ne vous inquiétez pas : si vous faites une erreur, PythonAnywhere vous le signalera.
 
@@ -266,20 +242,23 @@ Supprimer le contenu du fichier et le remplacer par ce qui suit :
 import os
 import sys
 
-path = '/home/<your-username>/my-first-blog'  # remplacer your-username par votre nom d’utilisateur
+path = '/home/<your-username>/my-first-blog'  # use your own username here
 if path not in sys.path:
     sys.path.append(path)
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.settings'
 
 from django.core.wsgi import get_wsgi_application
-from whitenoise.django import DjangoWhiteNoise
-application = DjangoWhiteNoise(get_wsgi_application())
+from django.contrib.staticfiles.handlers import StaticFilesHandler
+application = StaticFilesHandler(get_wsgi_application())
 ```
 
 > **Note** : N'oubliez pas de remplacer `<your-username>` par votre nom d'utilisateur
+> **Note** : A la ligne 3, on s'assure que PythonAnywhere saura trouver notre application. Il est très important que ce chemin d'accès soit correct, et plus particulièrement qu'il n'y ait pas d'espaces en plus. Dans le cas contraire "ImportError" s'affichera dans le log d'erreur.
 
-Le but de ce fichier est de permettre à PythonAnywhere de savoir où votre application web se situe et de connaître le nom des fichiers de configuration de Django. Cela permet aussi de configurer l'outil "whitenoise" qui s'occupe des fichiers statiques.
+Le but de ce fichier est de permettre à PythonAnywhere de savoir où votre application web se situe et de connaître le nom des fichiers de configuration de Django.
+
+`StaticFilesHandler` sert à gérer notre CSS. Cette étape est réalisée automatiquement en exécutant la commande `runserver`. Nous aborderons un peu plus en détails les fichiers statiques quand nous éditerons le CSS de notre site.
 
 Cliquez sur **Save** puis, retournez dans l'onglet **Web**.
 

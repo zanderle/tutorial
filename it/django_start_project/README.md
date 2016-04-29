@@ -1,6 +1,6 @@
 # Il tuo primo progetto Django!
 
-> Parte di questo capitolo è basato su esercitazioni di Geek Girls (http://django.carrots.pl/).
+> Parte di questo capitolo è basato su esercitazioni di Geek Girls (https://github.com/ggcarrots/django-carrots).
 > 
 > Parti di questo capitolo sono basate sul [django-marcador tutorial][1] sotto la licenza Creative Commons Attributions-ShareAlike 4.0 International License. Il tutorial di django-marcador è protetto da copyright di Markus Zapke-Gründemann et al.
 
@@ -126,7 +126,8 @@ Ora tutto quello che devi fare è controllare che il tuo sito sia in esecuzione.
     http://127.0.0.1:8000/
     
 
-Il server web assumerà il command prompt finché non lo fermi. Per digitare più comandi mentre è in esecuzione apri una nuova finestra di terminale e attiva il tuo virtualenv. Per fermare il server web, torna alla finestra dove è in esecuzione e premi i pulsanti CTRL+C - Control and C insieme (su Windows, è probabile che tu deva premere Ctrl+Break).
+
+Il server web assumerà il controllo del command prompt finché non lo fermi. Per digitare più comandi mentre è in esecuzione apri una nuova finestra di terminale e attiva il tuo virtualenv. Per fermare il server web, torna alla finestra dove è in esecuzione e premi i pulsanti CTRL+C - Control e C insieme (su Windows, è probabile che tu deva premere Ctrl+Break).
 
 Congratulazioni! Hai appena creato il tuo primo sito e l'hai avviato usando un web server! Non è fantastico?
 

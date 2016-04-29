@@ -9,7 +9,7 @@ HTML stands for "HyperText Markup Language". __HyperText__ means it's a type of 
 If you're not familiar with programming it can be hard to grasp HTML at first, but your web browsers (like Chrome, Safari, Firefox, etc.) love it. Web browsers are designed to understand this code,
 follow its instructions, and present these files that your website is made of, exactly the way you want.
 
-Let's see how it works!
+To start, lets create an HTML file that will contain our resumé. 
 
 Create a new directory `djangogirls` in your home directory, where we will put everything we will work on in this tutorial.
 

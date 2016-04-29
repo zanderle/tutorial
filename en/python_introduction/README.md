@@ -5,11 +5,13 @@
 > Drop Booleans, if else
 > Drop function definition, we only need calling
 
-> Part of this chapter is based on tutorials by Geek Girls Carrots (http://django.carrots.pl/).
+> Part of this chapter is based on tutorials by Geek Girls Carrots (https://github.com/ggcarrots/django-carrots).
 
 Let's write some code!
 
 ## Python prompt
+
+> For readers at home: this part is covered in [Python Basics: Integers, Strings, Lists, Variables and Errors](https://www.youtube.com/watch?v=MO63L4s-20U) video.
 
 To start playing with Python, we need to open up a *command line* on your computer. You should already know how to do that -- you learned it in the [Intro to Command Line](../intro_to_command_line/README.md) chapter.
 
@@ -34,6 +36,7 @@ For now, we don't want to exit the Python console. We want to learn more about i
     5
 
 Nice! See how the answer popped out? Python knows math! You could try other commands like:
+
 - `4 * 5`
 - `5 - 1`
 - `40 / 2`
@@ -248,6 +251,8 @@ You can find a list of all available list methods in this chapter of the Python 
 
 ## Dictionaries
 
+> For readers at home: this part is covered in [Python Basics: Dictionaries](https://www.youtube.com/watch?v=ZX1CVvZLE6c) video.
+
 A dictionary is similar to a list, but you access values by looking up a key instead of an index. A key can be any string or number. The syntax to define an empty dictionary is:
 
     >>> {}
@@ -327,6 +332,8 @@ Awesome! You know a lot about programming now. In this last part you learned abo
 Excited for the next part? :)
 
 ## Compare things
+
+> For readers at home: this part is covered in [Python Basics: Comparisons](https://www.youtube.com/watch?v=7bzxqIKYgf4) video.
 
 A big part of programming includes comparing things. What's the easiest thing to compare? Numbers, of course. Let's see how that works:
 
@@ -416,6 +423,9 @@ Congrats! Booleans are one of the coolest features in programming, and you just 
 
 # Save it!
 
+> For readers at home: this part is covered in [Python Basics: Saving files and "If" statement](https://www.youtube.com/watch?v=dOAg6QVAxyk) video.
+
+
 So far we've been writing all our python code in the interpreter, which limits us to entering one line of code at a time. Normal programs are saved in files and executed by our programming language __interpreter__ or __compiler__. So far we've been running our programs one line at a time in the Python __interpreter__. We're going to need more than one line of code for the next few tasks, so we'll quickly need to:
 
 - Exit the Python interpreter
@@ -443,7 +453,7 @@ Now we need to save the file and give it a descriptive name. Let's call the file
 > **Note** You should notice one of the coolest thing about code editors: colours! In the Python console, everything was the same colour, now you should see that the `print` function is a different colour from the string. This is called "syntax highlighting", and it's a really useful feature when coding. The colour of things will give you hints, such as unclosed strings or a typo in a keyword name (like the `def` in a function, which we'll see below). This is one of the reasons we use a code editor :)
 
 
-With the file saved, it's time to run it! Using the skills you've learned in the command line section, use the terminal to **change directories** to the desktop.
+With the file saved, it's time to run it! Using the skills you've learned in the command line section, use the terminal to **change directories** to the desktop.  (**Note**:  Replace `<your_name>` including the `<` and `>` with your user name)
 
 On a Mac, the command will look something like this:
 
@@ -570,6 +580,8 @@ Time for the last part of this chapter!
 
 ## Your own functions!
 
+> For readers at home: this part is covered in [Python Basics: Functions](https://www.youtube.com/watch?v=5owr-6suOl0) video.
+
 Remember functions like `len()` that you can execute in Python? Well, good news - you will learn how to write your own functions now!
 
 A function is a sequence of instructions that Python should execute. Each function in Python starts with the keyword `def`, is given a name, and can have some parameters. Let's start with an easy one. Replace the code in **python_intro.py** with the following:
@@ -667,6 +679,8 @@ Let's call the code now:
 Congratulations! You just learned how to write functions! :)
 
 ## Loops
+
+> For readers at home: this part is covered in [Python Basics: For Loop](https://www.youtube.com/watch?v=aEA6Rc86HF0) video.
 
 This is the last part already. That was quick, right? :)
 

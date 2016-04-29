@@ -1,5 +1,6 @@
 # Introduction to the command-line interface
 
+> For readers at home: this chapter is covered in [Your new friend: Command Line](https://www.youtube.com/watch?v=jvZLWhkzX-8) video.
 If we want to create a website, we will need new ways of communicating with our computer.
 
 __Let us introduce you to your first new friend: the command line!__

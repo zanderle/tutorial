@@ -1,4 +1,4 @@
-> Una parte di questo capitolo si basa sui tutorial delle Geek Girls Carrots (http://django.carrots.pl/).
+> Una parte di questo capitolo si basa sui tutorial delle Geek Girls Carrots (https://github.com/ggcarrots/django-carrots).
 > 
 > Una parte di questo capitolo di basa sul [django-marcador tutorial](http://django-marcador.keimlink.de/) sotto licenza Creative Commons Attribution-ShareAlike 4.0 International License. Il tutorial di django-marcador è protetto da copyright di Markus Zapke-Gründemann et al.
 
@@ -61,7 +61,8 @@ Avvia il tuo virtualenv digitando:
     C:\Users\Name\djangogirls> myvenv\Scripts\activate
     
 
-#### Linux and OS X
+
+#### Linux e OS X
 
 Avvia il tuo virtualenv digitando:
 
