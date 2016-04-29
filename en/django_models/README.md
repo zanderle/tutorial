@@ -59,44 +59,6 @@ A model in Django is a special kind of object - it is saved in the `database`. A
 
 You can think of a model in the database as a spreadsheet with columns (fields) and rows (data).
 
-### Creating an application
-
-To keep everything tidy, we will create a separate application inside our project. It is very nice to have everything organized from the very beginning. To create an application we need to run the following command in the console (from `djangogirls` directory where `manage.py` file is):
-
-    (myvenv) ~/djangogirls$ python manage.py startapp blog
-
-You will notice that a new `blog` directory is created and it contains a number of files now. Our directories and files in our project should look like this:
-
-    djangogirls
-    ├── mysite
-    |       __init__.py
-    |       settings.py
-    |       urls.py
-    |       wsgi.py
-    ├── manage.py
-    └── blog
-        ├── migrations
-        |       __init__.py
-        ├── __init__.py
-        ├── admin.py
-        ├── models.py
-        ├── tests.py
-        └── views.py
-
-After creating an application we also need to tell Django that it should use it. We do that in the file `mysite/settings.py`. We need to find `INSTALLED_APPS` and add a line containing `'blog',` just above `)`. So the final product should look like this:
-
-```python
-INSTALLED_APPS = (
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'blog',
-)
-```
-
 ### Creating a blog post model
 
 In the `blog/models.py` file we define all objects called `Models` - this is a place in which we will define our blog post.
