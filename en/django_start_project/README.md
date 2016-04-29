@@ -7,9 +7,7 @@ tutorial](http://django-marcador.keimlink.de/) licensed under Creative Commons
 Attribution-ShareAlike 4.0 International License. The django-marcador tutorial
 is copyrighted by Markus Zapke-Gründemann et al.
 
-> TODO Fix the first two paragraphs
-
-We're going to create a simple blog!
+Let's turn our `index.html` file into a full-fledged website.
 
 The first step is to start a new Django project. Basically, this means that we'll run some scripts provided by Django that will create the skeleton of a Django project for us. This is just a bunch of directories and files that we will use later.
 
@@ -130,10 +128,10 @@ Now all you need to do is check that your website is running. Open your browser 
 
 The web server will take over your command prompt until you stop it. To type more commands whilst it is running open a new terminal window and activate your virtualenv. To stop the web server, switch back to the window in which it's running and pressing CTRL+C - Control and C buttons together (on Windows, you might have to press Ctrl+Break).
 
-> TODO Fix the following sentance.
-
-Congratulations! You've just created your first website and run it using a web server! Isn't that awesome?
+Congratulations! You've just created your first website and run it using a web server! We are no longer opening an HTML file directly from our finder, but are using something that an actual website would use. Isn't that awesome?
 
 ![It worked!](images/it_worked2.png)
 
-Ready for the next step? It's time to create some content!
+However you'll notice that this isn't our `index.html`. We'll change that in the next chapters.
+
+Ready for the next step? It's time to get familiar with Python and Django.
