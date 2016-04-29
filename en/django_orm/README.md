@@ -1,6 +1,6 @@
 # Django ORM and QuerySets
 
-> TODO Drop creating - we only need filtering and sorting
+> TODO: this chapter is missing context - explain why we want to access and filter
 
 In this chapter you'll learn how Django connects to the database and stores data in it. Let's dive in!
 
@@ -45,46 +45,6 @@ This is simple: we import model `Post` from `blog.models`. Let's try displaying 
     [<Post: my post title>, <Post: another post title>]
 
 It's a list of the posts we created earlier! We created these posts using the Django admin interface. But, now we want to create new posts using Python, so how do we do that?
-
-
-### Create object
-
-This is how you create a new Post object in database:
-
-    >>> Post.objects.create(author=me, title='Sample title', text='Test')
-
-But we have one missing ingredient here: `me`. We need to pass an instance of `User` model as an author. How to do that?
-
-Let's import User model first:
-
-    >>> from django.contrib.auth.models import User
-
-What users do we have in our database? Try this:
-
-    >>> User.objects.all()
-    [<User: ola>]
-
-It's the superuser we created earlier! Let's get an instance of the user now:
-
-    me = User.objects.get(username='ola')
-
-As you can see, we now `get` a `User` with a `username` that equals to 'ola'. Neat! Of course, you have to adjust it to your username.
-
-Now we can finally create our post:
-
-    >>> Post.objects.create(author=me, title='Sample title', text='Test')
-
-Hurray! Wanna check if it worked?
-
-    >>> Post.objects.all()
-    [<Post: my post title>, <Post: another post title>, <Post: Sample title>]
-
-There it is, one more post in the list!
-
-
-### Add more posts
-
-You can now have a little fun and add more posts to see how it works. Add 2-3 more and go ahead to the next part.
 
 
 ### Filter objects
