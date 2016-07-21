@@ -92,7 +92,7 @@ Ouvrez le fichier `blog/urls.py` et ajoutez cette ligne :
 Votre fichier doit maintenant ressembler à ceci :
 
 ```python
-from django.conf.urls import include, url
+from django.conf.urls import url
 from . import views
 
 urlpatterns = [
@@ -281,7 +281,7 @@ Votre template doit ressembler à ceci :
         {% endif %}
         <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
         <h1>{{ post.title }}</h1>
-        <p>{{ post.text|linebreaks }}</p>
+        <p>{{ post.text|linebreaksbr }}</p>
     </div>
 {% endblock %}
 ```
@@ -369,25 +369,25 @@ Comme vous êtes probablement connectée, vous ne verrez aucune différence si v
 Nos modifications fonctionnent-elles sur PythonAnywhere ? Pour le savoir, déployons à nouveau !
 
 *   Tout d'abord, commitez votre nouveau code et pushez-le à nouveau sur Github
-
+```
     $ git status
     $ git add --all .
     $ git status
     $ git commit -m "Ajout de vues qui permettent de créer et d'éditer un post de blog sur le site."
     $ git push
-
+```
 
 *   Puis, dans la console bash de [PythonAnywhere][7]:
 
  [7]: https://www.pythonanywhere.com/consoles/
-
+```
     $ cd my-first-blog
     $ source myvenv/bin/activate
     (myvenv)$ git pull
     [...]
     (myvenv)$ python manage.py collectstatic
     [...]
-
+```
 
 *   Enfin, cliquez sur l'onglet [Web][8] et cliquez sur **Reload**.
 
