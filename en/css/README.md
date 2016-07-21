@@ -10,7 +10,7 @@ But we don't want to start from scratch again, right? Once more, we'll use somet
 
 ## Let's use Bootstrap!
 
-Bootstrap is one of the most popular HTML and CSS frameworks for developing beautiful websites: http://getbootstrap.com/
+Bootstrap is one of the most popular HTML and CSS frameworks for developing beautiful websites: https://getbootstrap.com/
 
 It was written by programmers who worked for Twitter. Now it's developed by volunteers from all over the world!
 
@@ -61,7 +61,7 @@ Time to write some CSS! Open up the `blog.css` file in your code editor.
 We won't be going too deep into customizing and learning about CSS here. It's pretty easy and you can learn it on your own after this workshop. There is a recommendation for a free course to learn more at the end of this page.
 
 But let's do at least a little. Maybe we could change the color of our header?
-To understand colors, computers use special codes. These codes start with `#` followed by 6 letters (A-F) and numbers (0-9). For example, the code for blue is `#0000FF`. You can find the color codes for many colors here: http://www.colorpicker.com/. You may also use [predefined colors](http://www.w3schools.com/cssref/css_colornames.asp), such as `red` and `green`.
+To understand colors, computers use special codes. These codes start with `#` followed by 6 letters (A-F) and numbers (0-9). For example, the code for blue is `#0000FF`. You can find the color codes for many colors here: http://www.colorpicker.com/. You may also use [predefined colors](http://www.w3schools.com/colors/colors_names.asp), such as `red` and `green`.
 
 In your `blog.css` file you should add the following code:
 
@@ -77,7 +77,7 @@ In a CSS file we determine styles for elements in the HTML file. The first way w
 We also identify elements by the attribute `class` or the attribute `id`. Class and id are names you give the element by yourself. Classes define groups of elements, and ids point to specific elements. For example, you could identify the following tag by using the tag name `a`, the class `external_link`, or the id `link_to_wiki_page`:
 
 ```html
-<a href="http://en.wikipedia.org/wiki/Django" class="external_link" id="link_to_wiki_page">
+<a href="https://en.wikipedia.org/wiki/Django" class="external_link" id="link_to_wiki_page">
 ```
 
 Read about [CSS Selectors in w3schools](http://www.w3schools.com/cssref/css_selectors.asp).
@@ -112,17 +112,13 @@ Your file should now look like this:
             <h1><a href="">Django Girls Blog</a></h1>
         </div>
 
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaks }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
 ```
@@ -146,12 +142,12 @@ Add this to your CSS, save the file and see how it works!
 Maybe we can customize the font in our header? Paste this into your `<head>` in `index.html` file:
 
 ```html
-<link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 ```
 
-This line will import a font called *Lobster* from Google Fonts (https://www.google.com/fonts).
+As before, check the order and place before the link to `blog/static/css/blog.css`. This line will import a font called *Lobster* from Google Fonts (https://www.google.com/fonts).
 
-Find the `h1 a` declaration block (the code between braces `{` and `}`) in the CSS file ``blog.css`.  Now add the line `font-family: 'Lobster';` between the braces, and refresh the page:
+Find the `h1 a` declaration block (the code between braces `{` and `}`) in the CSS file ``blog/static/css/blog.css`.  Now add the line `font-family: 'Lobster';` between the braces, and refresh the page:
 
 ```css
 h1 a {
@@ -179,9 +175,9 @@ And now add a class `post` to your `div` containing a blog post.
 
 ```html
 <div class="post">
-    <p>published: 14.06.2014, 12:14</p>
-    <h2><a href="">My first post</a></h2>
-    <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+    <p>published: {{ post.published_date }}</p>
+    <h1><a href="">{{ post.title }}</a></h1>
+    <p>{{ post.text|linebreaks }}</p>
 </div>
 ```
 
@@ -239,17 +235,13 @@ h1, h2, h3, h4 {
 Then surround the HTML code which displays the posts with declarations of classes. Replace this:
 
 ```html
-<div class="post">
-    <p>published: 14.06.2014, 12:14</p>
-    <h2><a href="">My first post</a></h2>
-    <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-</div>
-
-<div class="post">
-    <p>published: 14.06.2014, 12:14</p>
-    <h2><a href="">My second post</a></h2>
-    <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-</div>
+{% for post in posts %}
+    <div class="post">
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaks }}</p>
+    </div>
+{% endfor %}
 ```
 
 in the `blog/templates/blog/post_list.html` with this:
@@ -258,17 +250,15 @@ in the `blog/templates/blog/post_list.html` with this:
 <div class="content container">
     <div class="row">
         <div class="col-md-8">
-            <div class="post">
-                <p>published: 14.06.2014, 12:14</p>
-                <h2><a href="">My first post</a></h2>
-                <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            </div>
-
-            <div class="post">
-                <p>published: 14.06.2014, 12:14</p>
-                <h2><a href="">My second post</a></h2>
-                <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-            </div>
+            {% for post in posts %}
+                <div class="post">
+                    <div class="date">
+                        <p>published: {{ post.published_date }}</p>
+                    </div>
+                    <h1><a href="">{{ post.title }}</a></h1>
+                    <p>{{ post.text|linebreaks }}</p>
+                </div>
+            {% endfor %}
         </div>
     </div>
 </div>
@@ -283,7 +273,7 @@ Look at the code we just pasted to find the places where we added classes in the
 
 Don't be afraid to tinker with this CSS a little bit and try to change some things. Playing with the CSS can help you understand what the different things are doing. If you break something, don't worry, you can always undo it!
 
-We really recommend taking this free online [Codeacademy HTML & CSS course](http://www.codecademy.com/tracks/web). It can help you learn all about making your websites prettier with CSS.
+We really recommend taking this free online [Codeacademy HTML & CSS course](https://www.codecademy.com/tracks/web). It can help you learn all about making your websites prettier with CSS.
 
 Ready for the next chapter?! :)
 

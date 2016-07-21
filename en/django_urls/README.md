@@ -1,10 +1,12 @@
-# Django urls
+# Django URLs
 
-We have our template, we have our view, but Django doesn't know where to use it. Let's define what URL we want to show this view and template at.
+* Let's move the CV to /about/ and have a home page display a blog
+
+We're about to build our first webpage: a homepage for your blog! But first, let's learn a little bit about Django urls.
 
 ## What is a URL?
 
-A URL is simply a web address. You can see a URL every time you visit a website - it is visible in your browser's address bar (yes! `127.0.0.1:8000` is a URL! And `https://djangogirls.com` is also a URL):
+A URL is simply a web address. You can see a URL every time you visit a website - it is visible in your browser's address bar (yes! `127.0.0.1:8000` is a URL! And `https://djangogirls.org` is also a URL):
 
 ![Url](images/url.png)
 
@@ -31,7 +33,7 @@ As you can see, Django already put something here for us.
 
 Lines between triple quotes (`'''` or `"""`) are called docstrings - you can write them at the top of a file, class or method to describe what it does. They won't be run by Python.
 
-The admin URL, which we will visit in the following chapters is already here:
+The admin URL, which you visited in previous chapter is already here:
 
 ```python
     url(r'^admin/', admin.site.urls),
