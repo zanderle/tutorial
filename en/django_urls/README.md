@@ -1,6 +1,6 @@
 # Django URLs
 
-* Let's move the CV to /about/ and have a home page display a blog
+> TODO: This chapter is missing continuity. We've built a view already, so this first sentence doesn't make sense.
 
 We're about to build our first webpage: a homepage for your blog! But first, let's learn a little bit about Django urls.
 
@@ -33,7 +33,7 @@ As you can see, Django already put something here for us.
 
 Lines between triple quotes (`'''` or `"""`) are called docstrings - you can write them at the top of a file, class or method to describe what it does. They won't be run by Python.
 
-The admin URL, which you visited in previous chapter is already here:
+The admin URL, which you'll visit in the following chapters, is already here:
 
 ```python
     url(r'^admin/', admin.site.urls),
@@ -109,7 +109,6 @@ urlpatterns = [
 ]
 ```
 
-> TODO: Add about page as well (create view, template and url)
 
 As you can see, we're now assigning our `post_list` view to `^$` URL. This regular expression will match `^` (a beginning) followed by `$` (an end) - so only an empty string will match. That's correct, because in Django URL resolvers, 'http://127.0.0.1:8000/' is not a part of the URL. This pattern will tell Django that `views.post_list` is the right place to go if someone enters your website at the 'http://127.0.0.1:8000/' address.
 
@@ -122,6 +121,8 @@ If you try to visit http://127.0.0.1:8000/ now, then you'll find some sort of 'w
 By this same procedure you can also add other pages and link them to their own URL. Let's try.
 
 It would be great if your blog had an 'about' section, where people could read more about you and your blog. Just as before, we first need to create a template for our page. Create a new file in `blog/templates` and name it `about.html`. Inside, copy-paste the part of `index.html` that we want to keep (we want the same styling, menu, and title).
+
+> TODO: Add an "about" page as well (create view, template and url). Is this part missing any content about that?
 
 ```html
 <html>

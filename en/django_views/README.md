@@ -1,6 +1,6 @@
 # Django views - time to create!
 
-A *view* is a place where we put the "logic" of our application. It is where we decide what information we want to show and perform any actions before that. A view will be connected to an *URL*, which we will se in the next chapter. First, we'll need to define our view. And because our views live in our application, we first need to create an application.
+A *view* is a place where we put the "logic" of our application. It is where we decide what information we want to show and perform any actions before that. A view will be connected to an *URL*, which we will see in the next chapter. First, we'll need to define our view. And because our views live in our application, we first need to create an application.
 
 ### Creating an application
 

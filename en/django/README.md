@@ -22,7 +22,7 @@ Imagine a mailbox (port) which is monitored for incoming letters (requests). Thi
 
 ## What happens when someone requests a website from your server?
 
-> TODO: Maybe simplify this part (do we really need it at this point, or can we move it in later chapters?)
+> TODO: Maybe simplify the following part. Do we really need it at this point, or can we move it in later chapters? Is there value in explaining all of this here? Seems like explaining urlresolver and views would make more sense a bit later (maybe in the urls chapter)
 
 When a request comes to a web server it's passed to Django which tries to figure out what actually is requested. It takes a webpage address first and tries to figure out what to do. This part is done by Django's __urlresolver__ (note that a website address is called a URL - Uniform Resource Locator - so the name *urlresolver* makes sense). It is not very smart - it takes a list of patterns and tries to match the URL. Django checks patterns from top to the bottom and if something is matched then Django passes the request to the associated function (which is called *view*).
 
