@@ -16,7 +16,7 @@ We need to open our `blog/views.py`. So far `post_list` *view* looks like this:
 from django.shortcuts import render
 
 def post_list(request):
-    return render(request, 'blog/post_list.html', {})
+    return render(request, 'blog/index.html', {})
 ```
 
 Remember when we talked about including code written in different files? Now it is the moment when we have to include the model we have written in `models.py`. We will add this line `from .models import Post` like this:
@@ -47,7 +47,7 @@ from .models import Post
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'blog/post_list.html', {})
+    return render(request, 'blog/index.html', {})
 ```
 
 Please note that we create a *variable* for our QuerySet: `posts`. Treat this as the name of our QuerySet. From now on we can refer to it by this name.
@@ -56,7 +56,7 @@ Also, the code uses the `timezone.now()` function, so we need to add an import f
 
 The last missing part is passing the `posts` QuerySet to the template. Don't worry we will cover how to display it in a next chapter.
 
-In the `render` function we already have parameter with `request` (so everything we receive from the user via the Internet) and a template file `'blog/post_list.html'`. The last parameter, which looks like this: `{}` is a place in which we can add some things for the template to use. We need to give them names (we will stick to `'posts'` right now :)). It should look like this: `{'posts': posts}`. Please note that the part before `:` is a string; you need to wrap it with quotes `''`.
+In the `render` function we already have parameter with `request` (so everything we receive from the user via the Internet) and a template file `'blog/index.html'`. The last parameter, which looks like this: `{}` is a place in which we can add some things for the template to use. We need to give them names (we will stick to `'posts'` right now :)). It should look like this: `{'posts': posts}`. Please note that the part before `:` is a string; you need to wrap it with quotes `''`.
 
 So finally our `blog/views.py` file should look like this:
 
@@ -67,7 +67,7 @@ from .models import Post
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'blog/post_list.html', {'posts': posts})
+    return render(request, 'blog/index.html', {'posts': posts})
 ```
 
 That's it! Time to go back to our template and display this QuerySet!
@@ -86,7 +86,7 @@ To print a variable in Django templates, we use double curly brackets with the v
 {{ posts }}
 ```
 
-Try this in your `blog/templates/blog/post_list.html` template. Replace everything from the second `<div>` to the third `</div>` with `{{ posts }}`. Save the file, and refresh the page to see the results:
+Try this in your `blog/templates/blog/index.html` template. Replace everything from the second `<div>` to the third `</div>` with `{{ posts }}`. Save the file, and refresh the page to see the results:
 
 ![Figure 13.1](images/step1.png)
 

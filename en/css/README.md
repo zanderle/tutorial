@@ -252,7 +252,7 @@ Then surround the HTML code which displays the posts with declarations of classe
 </div>
 ```
 
-in the `blog/templates/blog/post_list.html` with this:
+in the `blog/templates/blog/index.html` with this:
 
 ```html
 <div class="content container">
