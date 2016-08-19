@@ -1,8 +1,6 @@
 # Django URLs
 
-> TODO: This chapter is missing continuity. We've built a view already, so this first sentence doesn't make sense.
-
-We're about to build our first webpage: a homepage for your blog! But first, let's learn a little bit about Django urls.
+We created a view for our blog homepage in the previous chapter, and now we need to make that accessible to the browser by creating a URL for it. But first, let's learn a little bit about Django urls.
 
 ## What is a URL?
 
@@ -109,21 +107,21 @@ urlpatterns = [
 ]
 ```
 
-
 As you can see, we're now assigning our `post_list` view to `^$` URL. This regular expression will match `^` (a beginning) followed by `$` (an end) - so only an empty string will match. That's correct, because in Django URL resolvers, 'http://127.0.0.1:8000/' is not a part of the URL. This pattern will tell Django that `views.post_list` is the right place to go if someone enters your website at the 'http://127.0.0.1:8000/' address.
 
 The last part `name='post_list'` is the name of the URL that will be used to identify the view. This can be the same as the name of the view but it can also be something completely different. We will be using the named URLs later in the project so it is important to name each URL in the app. We should also try to keep the names of URLs unique and easy to remember.
 
-If you try to visit http://127.0.0.1:8000/ now, then you'll find some sort of 'web page not available' message. This is because the server (remember typing `runserver`?) is no longer running. Take a look at your server console window to find out why.
+Now visit http://127.0.0.1:8000/ and you should see the content you wrote in `blog/templates/blog/index.html`.
 
-> TODO: add missing image
+![Blog Post list](images/post_list.png)
 
 By this same procedure you can also add other pages and link them to their own URL. Let's try.
 
-It would be great if your blog had an 'about' section, where people could read more about you and your blog. Just as before, we first need to create a template for our page. Create a new file in `blog/templates` and name it `about.html`. Inside, copy-paste the part of `index.html` that we want to keep (we want the same styling, menu, and title).
+## Your "about" page
 
-> TODO: Add an "about" page as well (create view, template and url). Is this part missing any content about that?
+It would be great if your blog had an 'about' section, where people could read more about you and your blog. Just as before, we first need to create a template for our page. Create a new file in `blog/templates/blog` and name it `about.html`. Inside, copy-paste the part of `index.html` that we want to keep (we want the same styling, menu, and title).
 
+{% filename %}blog/templates/blog/about.html{% endfilename %}
 ```html
 <html>
     <head>
@@ -140,12 +138,31 @@ It would be great if your blog had an 'about' section, where people could read m
 </html>
 ```
 
-Then add some information about yourself and about this blog.
+Then add some information about yourself and about this blog after the `<div class="page-header"></div>`. Get creative with your description, but make sure your file looks something like this when you're done:
 
-> TODO: Add an example
+{% filename %}blog/templates/blog/about.html{% endfilename %}
+```html
+<html>
+    <head>
+        <title>Django Girls blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="blog.css">
+    </head>
+    <body>
+        <div class="page-header">
+            <h1><a href="/">Django Girls Blog</a></h1>
+        </div>
 
-After that, we need to create a new view.
+        <h2>Hi! My name is [your name] and I made this blog</h2>
+        <p>Here is a little bit more about me [...]</p>
+    </body>
+</html>
+```
 
+After that, we need to create a new view. Add this new function to the bottom of `blog/views.py` to tell Django that we want to use the `about.html` template.
+
+{% filename %}blog/views.py{% endfilename %}
 ```python
 def about(request):
     return render(request, 'blog/about.html', {})
@@ -166,7 +183,9 @@ urlpatterns = [
 ]
 ```
 
-Open http://127.0.0.1:8000/about in your browser to see if it worked.
+Open http://127.0.0.1:8000/about/ in your browser to see if it worked.
+
+> If you receive a "Not found" error when you try to load the page, make sure you have added the `/` character at the end of the address bar in your browser. If that doesn't fix the problem, ask your coach for help.
 
 
 Great job! You now have your very own website on your computer. Lets share it with the world.
