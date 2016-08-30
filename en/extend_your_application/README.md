@@ -12,7 +12,7 @@ We already have a `Post` model, so we don't need to add anything to `models.py`.
 
 ## Create a template link to a post's detail
 
-We will start with adding a link inside `blog/templates/blog/post_list.html` file. So far it should look like:
+We will start with adding a link inside `blog/templates/blog/index.html` file. So far it should look like:
 ```html
 {% extends 'blog/base.html' %}
 
