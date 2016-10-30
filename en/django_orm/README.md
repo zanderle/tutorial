@@ -70,6 +70,8 @@ Unfortunately, the post we added from the Python console is not published yet. W
 
     >>> post = Post.objects.get(title="Sample title")
 
+> TODO: move the definition of `publish` method from Django Models chapters to here.
+
 And then publish it with our `publish` method!
 
     >>> post.publish()

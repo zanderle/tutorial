@@ -40,7 +40,7 @@ In the `blog/models.py` file we define all objects called `Models` - this is a p
 
 Let's open `blog/models.py`, remove everything from it and write code like this:
 
-> TODO: Remove `publish()` and `__str__`. We can define them when we need them
+> TODO: Remove `publish()` and `__str__` at this point. They should be moved to Django ORM and Django Admin chapters respectively (when we actually need them, which makes for better context).
 
 ```python
 from django.db import models
