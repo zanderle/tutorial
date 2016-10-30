@@ -1,9 +1,12 @@
 {
-    "gitbook": ">=3.1.1",
+    "gitbook": ">=3.2.0",
     "links": {
         "sidebar": {
             "Need help? Talk to us!": "https://gitter.im/DjangoGirls/tutorial"
         }
+    },
+    "pdf": {
+        "fontSize": 14
     },
     "plugins": [
         "heading-anchors@1.0.3",
@@ -12,7 +15,8 @@
         "github@2.0.0",
         "language-picker",
         "sidebar-ad",
-        "codeblock-label"
+        "codeblock-label",
+        "sectionx"
     ],
     "pluginsConfig": {
         "ga": {

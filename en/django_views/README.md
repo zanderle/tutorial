@@ -1,4 +1,4 @@
-# Django views - time to create!
+# Django views – time to create!
 
 A *view* is a place where we put the "logic" of our application. It is where we decide what information we want to show and perform any actions before that. A view will be connected to an *URL*, which we will see in the next chapter. First, we'll need to define our view. And because our views live in our application, we first need to create an application.
 
@@ -49,19 +49,20 @@ Views are placed in the `views.py` file. We will add our *views* to the `blog/vi
 
 OK, let's open up this file and see what's in there:
 
+{% filename %}blog/views.py{% endfilename %}
 ```python
 from django.shortcuts import render
 
 # Create your views here.
 ```
 
-
 Not too much stuff here yet.
 
-Remember that lines starting with `#` are comments and those lines won't be run by Python.
+Remember that lines starting with `#` are comments – this means that those lines won't be run by Python.
 
-The simplest *view* can look like this.
+The simplest *view* can look like this:
 
+{% filename %}blog/views.py{% endfilename %}
 ```python
 def post_list(request):
     return render(request, 'blog/index.html', {})

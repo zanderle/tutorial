@@ -1,12 +1,12 @@
-# CSS - make it pretty!
+# CSS – make it pretty!
 
 Time to make our webpage look nice! We will use CSS for that.
 
 ## What is CSS?
 
-Cascading Style Sheets (CSS) is a language used for describing the look and formatting of a website written in markup language (like HTML). Treat it as make-up for our webpage ;).
+Cascading Style Sheets (CSS) is a language used for describing the look and formatting of a website written in a markup language (like HTML). Treat it as make-up for our web page. ;)
 
-But we don't want to start from scratch again, right? Once more, we'll use something that programmers released on the Internet for free. You know, reinventing the wheel is no fun.
+But we don't want to start from scratch again, right? Once more, we'll use something that programmers released on the Internet for free. Reinventing the wheel is no fun, you know.
 
 ## Let's use Bootstrap!
 
@@ -18,13 +18,13 @@ It was written by programmers who worked for Twitter. Now it's developed by volu
 
 To install Bootstrap, you need to add this to your `<head>` in your `index.html` file:
 
+{% filename %}index.html{% endfilename %}
 ```html
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 ```
 
-This doesn't add any files to your project. It just points to files that exist on the internet.
-Just go ahead, open your website and refresh the page. Here it is!
+This doesn't add any files to your project. It just points to files that exist on the Internet. Just go ahead, open your website and refresh the page. Here it is!
 
 ![Figure 14.1](images/bootstrap1.png)
 
@@ -42,14 +42,15 @@ Django already knows where to find the static files for the built-in "admin" app
 
 We do that by creating a folder called `static` inside the blog app:
 
-    djangogirls
-    ├── blog
-    │   ├── migrations
-    │   └── static
-    └── mysite
+```
+djangogirls
+├── blog
+│   ├── migrations
+│   └── static
+└── mysite
+```
 
-Django will automatically find any folders called "static" inside any of your apps' folders. Then, it will be able to use their contents as static files.
-
+Django will automatically find any folders called "static" inside any of your apps' folders. Then it will be able to use their contents as static files.
 
 
 ## Your first CSS file!
@@ -61,17 +62,18 @@ Time to write some CSS! Open up the `blog.css` file in your code editor.
 We won't be going too deep into customizing and learning about CSS here. It's pretty easy and you can learn it on your own after this workshop. There is a recommendation for a free course to learn more at the end of this page.
 
 But let's do at least a little. Maybe we could change the color of our header?
-To understand colors, computers use special codes. These codes start with `#` followed by 6 letters (A-F) and numbers (0-9). For example, the code for blue is `#0000FF`. You can find the color codes for many colors here: http://www.colorpicker.com/. You may also use [predefined colors](http://www.w3schools.com/colors/colors_names.asp), such as `red` and `green`.
+To understand colors, computers use special codes. These codes start with `#` followed by 6 letters (A–F) and numbers (0–9). For example, the code for blue is `#0000FF`. You can find the color codes for many colors here: http://www.colorpicker.com/. You may also use [predefined colors](http://www.w3schools.com/colors/colors_names.asp), such as `red` and `green`.
 
 In your `blog.css` file you should add the following code:
 
+{% filename %}blog.css{% endfilename %}
 ```css
 h1 a {
     color: #FCA205;
 }
 ```
 
-`h1 a` is a CSS Selector. This means we're applying our styles to any `a` element inside of an `h1` element. So when we have something like: `<h1><a href="">link</a></h1>` the `h1 a` style will apply. In this case, we're telling it to change its color to `#FCA205`, which is orange. Of course, you can put your own color here!
+`h1 a` is a CSS Selector. This means we're applying our styles to any `a` element inside of an `h1` element. So when we have something like `<h1><a href="">link</a></h1>`, the `h1 a` style will apply. In this case, we're telling it to change its color to `#FCA205`, which is orange. Of course, you can put your own color here!
 
 In a CSS file we determine styles for elements in the HTML file. The first way we identify elements is with the element name. You might remember these as tags from the HTML section. Things like `a`, `h1`, and `body` are all examples of element names.
 We also identify elements by the attribute `class` or the attribute `id`. Class and id are names you give the element by yourself. Classes define groups of elements, and ids point to specific elements. For example, you could identify the following tag by using the tag name `a`, the class `external_link`, or the id `link_to_wiki_page`:
@@ -80,17 +82,19 @@ We also identify elements by the attribute `class` or the attribute `id`. Class 
 <a href="https://en.wikipedia.org/wiki/Django" class="external_link" id="link_to_wiki_page">
 ```
 
-Read about [CSS Selectors in w3schools](http://www.w3schools.com/cssref/css_selectors.asp).
+You can read more about [CSS Selectors at w3schools](http://www.w3schools.com/cssref/css_selectors.asp).
 
-Then, we need to also tell our HTML template that we added some CSS. Open the `index.html` file, so we can point to our new `.css` file.
+We also need to tell our HTML template that we added some CSS. Open the `index.html` file and add this line at the very beginning of it:
 
+{% filename %}index.html{% endfilename %}
 ```html
 {% load staticfiles %}
 ```
 
-We're just loading static files here :). 
-Between the `<head>` and `</head>`, after the links to the Bootstrap CSS files add this line:
+We're just loading static files here. :)
+Between the `<head>` and `</head>` tags, after the links to the Bootstrap CSS files, add this line:
 
+{% filename %}index.html{% endfilename %}
 ```html
 <link rel="stylesheet" href="blog.css'">
 ```
@@ -99,6 +103,7 @@ We just told our template where our CSS file is located.
 
 Your file should now look like this:
 
+{% filename %}blog/templates/blog/post_list.html{% endfilename %}
 ```html
 <html>
     <head>
@@ -133,18 +138,20 @@ OK, save the file and refresh the site!
 
 Nice work! Maybe we would also like to give our website a little air and increase the margin on the left side? Let's try this!
 
+{% filename %}blog.css{% endfilename %}
 ```css
 body {
     padding-left: 15px;
 }
 ```
 
-Add this to your CSS, save the file and see how it works!
+Add that to your CSS, save the file and see how it works!
 
 ![Figure 14.3](images/margin2.png)
 
 Maybe we can customize the font in our header? Paste this into your `<head>` in `index.html` file:
 
+{% filename %}index.html{% endfilename %}
 ```html
 <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 ```
@@ -153,6 +160,7 @@ As before, check the order and place before the link to `blog.css`. This line wi
 
 Find the `h1 a` declaration block (the code between braces `{` and `}`) in the CSS file ``blog.css`.  Now add the line `font-family: 'Lobster';` between the braces, and refresh the page:
 
+{% filename %}blog.css{% endfilename %}
 ```css
 h1 a {
     color: #FCA205;
@@ -169,6 +177,7 @@ As mentioned above, CSS has a concept of classes. These allow you to name a part
 
 Go ahead and name some parts of the HTML code. Add a class called `page-header` to your `div` that contains your header, like this:
 
+{% filename %}index.html{% endfilename %}
 ```html
 <div class="page-header">
     <h1><a href="/">Django Girls Blog</a></h1>
@@ -177,6 +186,7 @@ Go ahead and name some parts of the HTML code. Add a class called `page-header` 
 
 And now add a class `post` to your `div` containing a blog post.
 
+{% filename %}index.html{% endfilename %}
 ```html
 <div class="post">
     <p>published: 14.06.2014, 12:14</p>
@@ -185,8 +195,9 @@ And now add a class `post` to your `div` containing a blog post.
 </div>
 ```
 
-We will now add declaration blocks to different selectors. Selectors starting with `.` relate to classes. There are many great tutorials and explanations about CSS on the Web to help you understand the following code. For now, just copy and paste it into your `blog.css` file:
+We will now add declaration blocks to different selectors. Selectors starting with `.` relate to classes. There are many great tutorials and explanations about CSS on the Web that can help you understand the following code. For now, just copy and paste it into your `blog.css` file:
 
+{% filename %}blog.css{% endfilename %}
 ```css
 .page-header {
     background-color: #ff9400;
@@ -238,6 +249,7 @@ h1, h2, h3, h4 {
 
 Then surround the HTML code which displays the posts with declarations of classes. Replace this:
 
+{% filename %}index.html{% endfilename %}
 ```html
 <div class="post">
     <p>published: 14.06.2014, 12:14</p>
@@ -254,6 +266,7 @@ Then surround the HTML code which displays the posts with declarations of classe
 
 in the `blog/templates/blog/index.html` with this:
 
+{% filename %}index.html{% endfilename %}
 ```html
 <div class="content container">
     <div class="row">
@@ -281,7 +294,7 @@ Save those files and refresh your website.
 Woohoo! Looks awesome, right?
 Look at the code we just pasted to find the places where we added classes in the HTML and used them in the CSS. Where would you make the change if you wanted the date to be turquoise?
 
-Don't be afraid to tinker with this CSS a little bit and try to change some things. Playing with the CSS can help you understand what the different things are doing. If you break something, don't worry, you can always undo it!
+Don't be afraid to tinker with this CSS a little bit and try to change some things. Playing with the CSS can help you understand what the different things are doing. If you break something, don't worry – you can always undo it!
 
 We really recommend taking this free online [Codeacademy HTML & CSS course](https://www.codecademy.com/tracks/web). It can help you learn all about making your websites prettier with CSS.
 

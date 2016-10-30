@@ -4,14 +4,15 @@ Sometimes you want parts of your website to display dynamic data - that is, data
 
 ## What are template tags?
 
-You see, in HTML, you can't really write Python code, because browsers don't understand it. They only know HTML. We know that HTML is rather static, while Python is much more dynamic.
+You see, in HTML, you can't really write Python code, because browsers don't understand it. They know only HTML. We know that HTML is rather static, while Python is much more dynamic.
 
-__Django template tags__ allow us to transfer Python-like things into HTML, so you can build dynamic websites faster and easier. Yikes!
+__Django template tags__ allow us to transfer Python-like things into HTML, so you can build dynamic websites faster and easier. Cool!
 
 ## Display the current date and time
 
 Let's say we want to show the current date when a visitor loads our site. Django provides a __template tag__ just for that: `{% now %}`. You can insert the `{% now %}` tag anywhere in your template and the current date will be displayed when you visit the page in the browser. This is how it looks like when you use it in your template alongside regular HTML:
 
+{% filename %}blog/templates/blog/post_list.html{% endfilename %}
 ```html
 <p>Hello! It is {% now "SHORT_DATE_FORMAT" %}</p>
 ```

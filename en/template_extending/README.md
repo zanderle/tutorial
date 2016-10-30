@@ -2,7 +2,7 @@
 
 Another nice thing Django has for you is __template extending__. What does this mean? It means that you can use the same parts of your HTML for different pages of your website.
 
-Templates help when you want to use the same information/layout in more than one place.  You don't have to repeat yourself in every file. And if you want to change something, you don't have to do it in every template, just once!
+Templates help when you want to use the same information or layout in more than one place.  You don't have to repeat yourself in every file. And if you want to change something, you don't have to do it in every template, just one!
 
 Remember how we've had to copy all our changes on both the `index.html` and the `about.html` templates? We're now going to learn how Django's template extending can help us avoid that duplication.
 
@@ -12,12 +12,13 @@ A base template is the most basic template that you extend on every page of your
 
 Let's create a `base.html` file in `blog/templates/blog/`:
 
-    blog
-    └───templates
-        └───blog
-                about.html
-                base.html
-                index.html
+```
+blog
+└───templates
+    └───blog
+            base.html
+            index.html
+```
 
 Then open it up and copy everything from `index.html` to `base.html` file, like this:
 
@@ -79,16 +80,16 @@ Then in `base.html`, replace your whole `<body>` (everything between `<body>` an
 
 You might notice this replaced all blog post content (both `<div class="post">` and everything inside them) with:
 
+{% filename %}blog/templates/blog/base.html{% endfilename %}
 ```html
 {% block content %}
 {% endblock %}
 ```
-But why?  You just created a `block`!  You used the template tag `{% block %}` to make an area that will have HTML inserted in it. That HTML will come from another templates that extends this template (`base.html`). We will show you how to do this in a moment.
+But why?  You just created a `block`!  You used the template tag `{% block %}` to make an area that will have HTML inserted in it. That HTML will come from another template that extends this template (`base.html`). We will show you how to do this in a moment.
 
-Now save `base.html`, and open your `blog/templates/blog/index.html` again.
-You're going to remove everything except the two `<div class="post">` and everything inside them. When you're done the file will look like this:
+Now save `base.html` and open your `blog/templates/blog/index.html` again.
+{% raw %}You're going to remove everything except the two `<div class="post">` and everything inside them. When you're done, the file will look like this:{% endraw %}
 
-{% filename %}blog/templates/blog/index.html{% endfilename %}
 ```html
 <div class="post">
     <p>published: 14.06.2014, 12:14</p>
@@ -106,9 +107,8 @@ You're going to remove everything except the two `<div class="post">` and everyt
 We want to use this as part of our template for all the content blocks.
 Time to add block tags to this file!
 
-{% raw %}You want your block tag to match the tag in your `base.html` file. You also want it to include all the code that belongs in your content blocks. To do that, put everything between `{% block content %}` and `{% endblock content %}`. Like this: {% endraw %}
+{% raw %}You want your block tag to match the tag in your `base.html` file. You also want it to include all the code that belongs in your content blocks. To do that, put everything between `{% block content %}` and `{% endblock content %}`. Like this:{% endraw %}
 
-{% filename %}blog/templates/blog/index.html{% endfilename %}
 ```html
 {% block content %}
     <div class="post">
@@ -146,7 +146,7 @@ Only one thing left. We need to connect these two templates together.  This is w
 {% endblock %}
 ```
 
-That's it! Check if your website is still working properly :)
+That's it! Check if your website is still working properly. :)
 
 > If you have an error `TemplateDoesNotExist` that says that there is no `blog/base.html` file and you have `runserver` running in the console, try to stop it (by pressing Ctrl+C - Control and C buttons together) and restart it by running a `python manage.py runserver` command.
 
@@ -167,14 +167,15 @@ Save your changes and visit http://127.0.0.1:8000/about/ in your browser. Everyt
 
 ## One more thing
 
-It'd be good to see if your website will still be working on the public Internet, right? Let's try deploying to PythonAnywhere again. Here's a recap of the steps...
+It'd be good to see if your website will still be working on the public Internet, right? Let's try deploying to PythonAnywhere again. Here's a recap of the steps…
 
 * First, push your code to Github
 
+{% filename %}command-line{% endfilename %}
 ```
 $ git status
 [...]
-$ git add -all .
+$ git add --all .
 $ git status
 [...]
 $ git commit -m "Modified templates to display posts from database."
@@ -184,13 +185,14 @@ $ git push
 
 * Then, log back in to [PythonAnywhere](https://www.pythonanywhere.com/consoles/) and go to your **Bash console** (or start a new one), and run:
 
+{% filename %}command-line{% endfilename %}
 ```
 $ cd my-first-blog
 $ git pull
 [...]
 ```
 
-* Finally, hop on over to the [Web tab](https://www.pythonanywhere.com/web_app_setup/) and hit **Reload** on your web app. Your update should be live!
+* Finally, hop on over to the [Web tab](https://www.pythonanywhere.com/web_app_setup/) and hit **Reload** on your web app. Your update should be live! If the blog posts on your PythonAnywhere site don't match the posts appearing on the blog hosted on your local server, that's OK. The databases on your local computer and Python Anywhere don't sync with the rest of your files.
 
 Works like a charm? We're proud! Step away from your computer for a bit, you have earned a break. :)
 
