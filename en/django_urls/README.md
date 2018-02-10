@@ -1,6 +1,6 @@
 # Django URLs
 
-We're about to build our first webpage: a homepage for your blog! But first, let's learn a little bit about Django URLs.
+We created a view for our blog homepage in the previous chapter, and now we need to make that accessible to the browser by creating a URL for it. But first, let's learn a little bit about Django urls.
 
 ## What is a URL?
 
@@ -33,7 +33,7 @@ As you can see, Django has already put something here for us.
 
 Lines between triple quotes (`'''` or `"""`) are called docstrings – you can write them at the top of a file, class or method to describe what it does. They won't be run by Python.
 
-The admin URL, which you visited in previous chapter, is already here:
+The admin URL, which you'll visit in the following chapters, is already here:
 
 {% filename %}mysite/urls.py{% endfilename %}
 ```python
@@ -117,10 +117,83 @@ As you can see, we're now assigning a `view` called `post_list` to the `^$` URL.
 
 The last part, `name='post_list'`, is the name of the URL that will be used to identify the view. This can be the same as the name of the view but it can also be something completely different. We will be using the named URLs later in the project, so it is important to name each URL in the app. We should also try to keep the names of URLs unique and easy to remember.
 
-If you try to visit http://127.0.0.1:8000/ now, then you'll find some sort of 'web page not available' message. This is because the server (remember typing `runserver`?) is no longer running. Take a look at your server console window to find out why.
+Now visit http://127.0.0.1:8000/ and you should see the content you wrote in `blog/templates/blog/index.html`.
 
-![Error](images/error1.png)
+![Blog Post list](images/post_list.png)
 
-Your console is showing an error, but don't worry – it's actually pretty useful: It's telling you that there is __no attribute 'post_list'__. That's the name of the *view* that Django is trying to find and use, but we haven't created it yet. At this stage your `/admin/` will also not work. No worries – we will get there.
+Your console is showing an error but don't worry&mdash;they're actually pretty useful:
 
-> If you want to know more about Django URLconfs, look at the official documentation: https://docs.djangoproject.com/en/1.9/topics/http/urls/
+## Your "about" page
+
+It would be great if your blog had an 'about' section, where people could read more about you and your blog. Just as before, we first need to create a template for our page. Create a new file in `blog/templates/blog` and name it `about.html`. Inside, copy-paste the part of `index.html` that we want to keep (we want the same styling, menu, and title).
+
+{% filename %}blog/templates/blog/about.html{% endfilename %}
+```html
+<html>
+    <head>
+        <title>Django Girls blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="blog.css">
+    </head>
+    <body>
+        <div class="page-header">
+            <h1><a href="/">Django Girls Blog</a></h1>
+        </div>
+    </body>
+</html>
+```
+
+Then add some information about yourself and about this blog after the `<div class="page-header"></div>`. Get creative with your description, but make sure your file looks something like this when you're done:
+
+{% filename %}blog/templates/blog/about.html{% endfilename %}
+```html
+<html>
+    <head>
+        <title>Django Girls blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="blog.css">
+    </head>
+    <body>
+        <div class="page-header">
+            <h1><a href="/">Django Girls Blog</a></h1>
+        </div>
+
+        <h2>Hi! My name is [your name] and I made this blog</h2>
+        <p>Here is a little bit more about me [...]</p>
+    </body>
+</html>
+```
+
+After that, we need to create a new view. Add this new function to the bottom of `blog/views.py` to tell Django that we want to use the `about.html` template.
+
+{% filename %}blog/views.py{% endfilename %}
+```python
+def about(request):
+    return render(request, 'blog/about.html', {})
+```
+
+Just like before, this will render our template. What else are we missing? Right, we need to connect this view to an URL.
+In your `urlpatterns` you can add a new URL pattern for `about` view by adding `url(r'^about/$', views.about, name='about')`.
+
+So now your `blog/urls.py` should look something like this:
+
+```python
+from django.conf.urls import url
+from . import views
+
+urlpatterns = [
+    url(r'^$', views.post_list, name='post_list'),
+    url(r'^about/$', views.about, name='about'),
+]
+```
+
+Open http://127.0.0.1:8000/about/ in your browser to see if it worked.
+
+> If you receive a "Not found" error when you try to load the page, make sure you have added the `/` character at the end of the address bar in your browser. If that doesn't fix the problem, ask your coach for help.
+
+
+Great job! You now have your very own website on your computer. Lets share it with the world.
+
+> If you want to know more about Django URLconfs, look at the official documentation: https://docs.djangoproject.com/en/1.8/topics/http/urls/

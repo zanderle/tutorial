@@ -7,7 +7,7 @@ tutorial](http://django-marcador.keimlink.de/) licensed under the Creative Commo
 Attribution-ShareAlike 4.0 International License. The django-marcador tutorial
 is copyrighted by Markus Zapke-Gründemann et al.
 
-We're going to create a simple blog!
+Let's turn our `index.html` file into a full-fledged website.
 
 The first step is to start a new Django project. Basically, this means that we'll run some scripts provided by Django that will create the skeleton of a Django project for us. This is just a bunch of directories and files that we will use later.
 
@@ -161,9 +161,11 @@ If you're using a Chromebook, you'll always visit your test server by accessing:
 https://django-girls-<your cloud9 username>.c9users.io
 ```
 
-Congratulations! You've just created your first website and run it using a web server! Isn't that awesome?
+Congratulations! You've just created your first website and run it using a web server! We are no longer opening an HTML file directly from our finder, but are using something that an actual website would use. Isn't that awesome?
 
 ![It worked!](images/it_worked2.png)
+
+However you'll notice that this isn't our `index.html`. We'll change that in the next chapters.
 
 While the web server is running, you won't see a new command-line prompt to enter additonal commands. The terminal will accept new text but will not execute new commands. This is because the web server continuously runs in order to listen for incoming requests.
 
@@ -171,4 +173,4 @@ While the web server is running, you won't see a new command-line prompt to ente
 
 To type additional commands while the web server is running, open a new terminal window and activate your virtualenv. To stop the web server, switch back to the window in which it's running and press CTRL+C - Control and C buttons together (on Windows, you might have to press Ctrl+Break).
 
-Ready for the next step? It's time to create some content!
+Ready for the next step? It's time to get familiar with Python and Django.

@@ -1,5 +1,10 @@
 # Introduction to Python
 
+> TODO: Strings, integers and variables explained together
+> Lists only used with for loops, dicts are just named lists
+> Drop Booleans, if else
+> Drop function definition, we only need calling
+
 > Part of this chapter is based on tutorials by Geek Girls Carrots (https://github.com/ggcarrots/django-carrots).
 
 Let's write some code!
@@ -52,6 +57,10 @@ Have fun with this for a little while and then get back here. :)
 
 As you can see, Python is a great calculator. If you're wondering what else you can do…
 
+> TODO Save result, use it in calculations
+> Try to save some text - doesn't work. We need "" to define text
+
+
 ## Strings
 
 How about your name? Type your first name in quotes like this:
@@ -98,6 +107,8 @@ or escaping the apostrophe with a backslash (`\`):
 "Runnin' down the hill"
 ```
 
+> TODO Drop the following part with the methods perhaps?
+
 Nice, huh? To see your name in uppercase letters, simply type:
 
 {% filename %}command-line{% endfilename %}
@@ -116,6 +127,8 @@ If you want to know the number of letters contained in your name, there is a __f
 3
 ```
 
+> TODO We want to drop the previous part, because this really doesn't need to be explained here. Confusing af
+
 Wonder why sometimes you call functions with a `.` at the end of a string (like `"Ola".upper()`) and sometimes you first call a function and place the string in parentheses? Well, in some cases, functions belong to objects, like `upper()`, which can only be performed on strings. In this case, we call the function a __method__. Other times, functions don't belong to anything specific and can be used on different types of objects, just like `len()`. That's why we're giving `"Ola"` as a parameter to the `len` function.
 
 ### Summary
@@ -128,6 +141,8 @@ OK, enough of strings. So far you've learned about:
 - __functions__ – like `upper()` and `len()`, perform actions on objects.
 
 These are the basics of every programming language you learn. Ready for something harder? We bet you are!
+
+> TODO Should Errors be moved up, since we've already dealt with an error?
 
 ## Errors
 
@@ -155,6 +170,8 @@ It worked! We used the `str` function inside of the `len` function. `str()` conv
 - The `int` function converts things into __integers__
 
 > Important: we can convert numbers into text, but we can't necessarily convert text into numbers – what would `int('hello')` be anyway?
+
+> TODO Variables can be moved up
 
 ## Variables
 
@@ -237,6 +254,8 @@ When you just type `name`, the Python interpreter responds with the string *repr
 
 As we'll see later, `print()` is also useful when we want to print things from inside functions, or when we want to print things on multiple lines.
 
+
+> TODO Explain lists with for loops (Hi Maria, Hi Jack...)
 
 ## Lists
 
@@ -330,6 +349,8 @@ That worked like a charm!
 For extra fun, try some other indexes: 6, 7, 1000, -1, -6 or -1000. See if you can predict the result before trying the command. Do the results make sense?
 
 You can find a list of all available list methods in this chapter of the Python documentation: https://docs.python.org/3/tutorial/datastructures.html
+
+> TODO: Explain dicts related to lists (same thing, just named)
 
 ## Dictionaries
 
@@ -434,6 +455,8 @@ Awesome! You know a lot about programming now. In this last part you learned abo
 - __dictionaries__ – objects stored as key–value pairs
 
 Excited for the next part? :)
+
+> TODO Drop booleans, if-else
 
 ## Compare things
 
@@ -763,6 +786,8 @@ In the last few exercises you learned about:
 
 Time for the last part of this chapter!
 
+> TODO Drop functions definitions
+
 ## Your own functions!
 
 > For readers at home: this part is covered in the [Python Basics: Functions](https://www.youtube.com/watch?v=5owr-6suOl0) video.
@@ -886,6 +911,8 @@ Hi Rachel!
 ```
 
 Congratulations! You just learned how to write functions! :)
+
+> TODO This can be moved up where lists are explained
 
 ## Loops
 

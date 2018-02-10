@@ -1,9 +1,6 @@
 # CSS – make it pretty!
 
-* Our blog looks really ugly - let's make it prettier
-
-
-Our blog still looks pretty ugly, right? Time to make it nice! We will use CSS for that.
+Time to make our webpage look nice! We will use CSS for that.
 
 ## What is CSS?
 
@@ -19,9 +16,9 @@ It was written by programmers who worked for Twitter. Now it's developed by volu
 
 ## Install Bootstrap
 
-To install Bootstrap, you need to add this to your `<head>` in your `.html` file:
+To install Bootstrap, you need to add this to your `<head>` in your `index.html` file:
 
-{% filename %}blog/templates/blog/post_list.html{% endfilename %}
+{% filename %}index.html{% endfilename %}
 ```html
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
@@ -58,26 +55,18 @@ Django will automatically find any folders called "static" inside any of your ap
 
 ## Your first CSS file!
 
-Let's create a CSS file now, to add your own style to your web page. Create a new directory called `css` inside your `static` directory. Then create a new file called `blog.css` inside this `css` directory. Ready?
+Let's create a CSS file now, to add your own style to your web-page. Create a new file called `blog.css` inside the same directory as `index.html` directory.
 
-```
-djangogirls
-└─── blog
-     └─── static
-          └─── css
-               └─── blog.css
-```
-
-Time to write some CSS! Open up the `blog/static/css/blog.css` file in your code editor.
+Time to write some CSS! Open up the `blog.css` file in your code editor.
 
 We won't be going too deep into customizing and learning about CSS here. It's pretty easy and you can learn it on your own after this workshop. There is a recommendation for a free course to learn more at the end of this page.
 
 But let's do at least a little. Maybe we could change the color of our header?
 To understand colors, computers use special codes. These codes start with `#` followed by 6 letters (A–F) and numbers (0–9). For example, the code for blue is `#0000FF`. You can find the color codes for many colors here: http://www.colorpicker.com/. You may also use [predefined colors](http://www.w3schools.com/colors/colors_names.asp), such as `red` and `green`.
 
-In your `blog/static/css/blog.css` file you should add the following code:
+In your `blog.css` file you should add the following code:
 
-{% filename %}blog/static/css/blog.css{% endfilename %}
+{% filename %}blog.css{% endfilename %}
 ```css
 h1 a {
     color: #FCA205;
@@ -95,9 +84,9 @@ We also identify elements by the attribute `class` or the attribute `id`. Class 
 
 You can read more about [CSS Selectors at w3schools](http://www.w3schools.com/cssref/css_selectors.asp).
 
-We also need to tell our HTML template that we added some CSS. Open the `blog/templates/blog/post_list.html` file and add this line at the very beginning of it:
+We also need to tell our HTML template that we added some CSS. Open the `index.html` file and add this line at the very beginning of it:
 
-{% filename %}blog/templates/blog/post_list.html{% endfilename %}
+{% filename %}index.html{% endfilename %}
 ```html
 {% load staticfiles %}
 ```
@@ -105,9 +94,9 @@ We also need to tell our HTML template that we added some CSS. Open the `blog/te
 We're just loading static files here. :)
 Between the `<head>` and `</head>` tags, after the links to the Bootstrap CSS files, add this line:
 
-{% filename %}blog/templates/blog/post_list.html{% endfilename %}
+{% filename %}index.html{% endfilename %}
 ```html
-<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+<link rel="stylesheet" href="blog.css'">
 ```
 The browser reads the files in the order they're given, so we need to make sure this is in the right place. Otherwise the code in our file may override code in Bootstrap files.
 We just told our template where our CSS file is located.
@@ -116,26 +105,29 @@ Your file should now look like this:
 
 {% filename %}blog/templates/blog/post_list.html{% endfilename %}
 ```html
-{% load staticfiles %}
 <html>
     <head>
         <title>Django Girls blog</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="blog.css">
     </head>
     <body>
         <div>
-            <h1><a href="/">Django Girls Blog</a></h1>
+            <h1><a href="">Django Girls Blog</a></h1>
         </div>
 
-        {% for post in posts %}
-            <div>
-                <p>published: {{ post.published_date }}</p>
-                <h1><a href="">{{ post.title }}</a></h1>
-                <p>{{ post.text|linebreaksbr }}</p>
-            </div>
-        {% endfor %}
+        <div>
+            <p>published: 14.06.2014, 12:14</p>
+            <h2><a href="">My first post</a></h2>
+            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        </div>
+
+        <div>
+            <p>published: 14.06.2014, 12:14</p>
+            <h2><a href="">My second post</a></h2>
+            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
+        </div>
     </body>
 </html>
 ```
@@ -146,7 +138,7 @@ OK, save the file and refresh the site!
 
 Nice work! Maybe we would also like to give our website a little air and increase the margin on the left side? Let's try this!
 
-{% filename %}blog/static/css/blog.css{% endfilename %}
+{% filename %}blog.css{% endfilename %}
 ```css
 body {
     padding-left: 15px;
@@ -157,18 +149,18 @@ Add that to your CSS, save the file and see how it works!
 
 ![Figure 14.3](images/margin2.png)
 
-Maybe we can customize the font in our header? Paste this into your `<head>` in `blog/templates/blog/post_list.html` file:
+Maybe we can customize the font in our header? Paste this into your `<head>` in `index.html` file:
 
-{% filename %}blog/templates/blog/post_list.html{% endfilename %}
+{% filename %}index.html{% endfilename %}
 ```html
 <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 ```
 
-As before, check the order and place before the link to `blog/static/css/blog.css`. This line will import a font called *Lobster* from Google Fonts (https://www.google.com/fonts).
+As before, check the order and place before the link to `blog.css`. This line will import a font called *Lobster* from Google Fonts (https://www.google.com/fonts).
 
-Find the `h1 a` declaration block (the code between braces `{` and `}`) in the CSS file `blog/static/css/blog.css`.  Now add the line `font-family: 'Lobster';` between the braces, and refresh the page:
+Find the `h1 a` declaration block (the code between braces `{` and `}`) in the CSS file ``blog.css`.  Now add the line `font-family: 'Lobster';` between the braces, and refresh the page:
 
-{% filename %}blog/static/css/blog.css{% endfilename %}
+{% filename %}blog.css{% endfilename %}
 ```css
 h1 a {
     color: #FCA205;
@@ -185,7 +177,7 @@ As mentioned above, CSS has a concept of classes. These allow you to name a part
 
 Go ahead and name some parts of the HTML code. Add a class called `page-header` to your `div` that contains your header, like this:
 
-{% filename %}blog/templates/blog/post_list.html{% endfilename %}
+{% filename %}index.html{% endfilename %}
 ```html
 <div class="page-header">
     <h1><a href="/">Django Girls Blog</a></h1>
@@ -194,18 +186,18 @@ Go ahead and name some parts of the HTML code. Add a class called `page-header` 
 
 And now add a class `post` to your `div` containing a blog post.
 
-{% filename %}blog/templates/blog/post_list.html{% endfilename %}
+{% filename %}index.html{% endfilename %}
 ```html
 <div class="post">
-    <p>published: {{ post.published_date }}</p>
-    <h1><a href="">{{ post.title }}</a></h1>
-    <p>{{ post.text|linebreaksbr }}</p>
+    <p>published: 14.06.2014, 12:14</p>
+    <h2><a href="">My first post</a></h2>
+    <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
 </div>
 ```
 
-We will now add declaration blocks to different selectors. Selectors starting with `.` relate to classes. There are many great tutorials and explanations about CSS on the Web that can help you understand the following code. For now, just copy and paste it into your `blog/static/css/blog.css` file:
+We will now add declaration blocks to different selectors. Selectors starting with `.` relate to classes. There are many great tutorials and explanations about CSS on the Web that can help you understand the following code. For now, just copy and paste it into your `blog.css` file:
 
-{% filename %}blog/static/css/blog.css{% endfilename %}
+{% filename %}blog.css{% endfilename %}
 ```css
 .page-header {
     background-color: #ff9400;
@@ -257,33 +249,39 @@ h1, h2, h3, h4 {
 
 Then surround the HTML code which displays the posts with declarations of classes. Replace this:
 
-{% filename %}blog/templates/blog/post_list.html{% endfilename %}
+{% filename %}index.html{% endfilename %}
 ```html
-{% for post in posts %}
-    <div class="post">
-        <p>published: {{ post.published_date }}</p>
-        <h1><a href="">{{ post.title }}</a></h1>
-        <p>{{ post.text|linebreaksbr }}</p>
-    </div>
-{% endfor %}
+<div class="post">
+    <p>published: 14.06.2014, 12:14</p>
+    <h2><a href="">My first post</a></h2>
+    <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+</div>
+
+<div class="post">
+    <p>published: 14.06.2014, 12:14</p>
+    <h2><a href="">My second post</a></h2>
+    <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
+</div>
 ```
 
-in the `blog/templates/blog/post_list.html` with this:
+in the `blog/templates/blog/index.html` with this:
 
-{% filename %}blog/templates/blog/post_list.html{% endfilename %}
+{% filename %}index.html{% endfilename %}
 ```html
 <div class="content container">
     <div class="row">
         <div class="col-md-8">
-            {% for post in posts %}
-                <div class="post">
-                    <div class="date">
-                        <p>published: {{ post.published_date }}</p>
-                    </div>
-                    <h1><a href="">{{ post.title }}</a></h1>
-                    <p>{{ post.text|linebreaksbr }}</p>
-                </div>
-            {% endfor %}
+            <div class="post">
+                <p>published: 14.06.2014, 12:14</p>
+                <h2><a href="">My first post</a></h2>
+                <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            </div>
+
+            <div class="post">
+                <p>published: 14.06.2014, 12:14</p>
+                <h2><a href="">My second post</a></h2>
+                <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
+            </div>
         </div>
     </div>
 </div>

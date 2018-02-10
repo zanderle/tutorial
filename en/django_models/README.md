@@ -1,8 +1,8 @@
 # Django models
 
-What we want to create now is something that will store all the posts in our blog. But to be able to do that we need to talk a little bit about things called `objects`.
+> TODO Add context and do this chapter without OOP
 
-## Objects
+What we want to create now is something that will store all the posts in our blog.
 
 There is a concept in programming called `object-oriented programming`. The idea is that instead of writing everything as a boring sequence of programming instructions, we can model things and define how they interact with each other.
 

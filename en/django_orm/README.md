@@ -1,6 +1,6 @@
 # Django ORM and QuerySets
 
-* Drop creating - we only need filtering and sorting
+> TODO: this chapter is missing context - explain why we want to access and filter
 
 In this chapter you'll learn how Django connects to the database and stores data in it. Let's dive in!
 
@@ -156,7 +156,7 @@ Unfortunately, the post we added from the Python console is not published yet. B
 >>> post = Post.objects.get(title="Sample title")
 ```
 
-And then publish it with our `publish` method:
+And then publish it with our `publish` method!
 
 {% filename %}command-line{% endfilename %}
 ```python

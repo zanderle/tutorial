@@ -1,6 +1,6 @@
 # Django templates
 
-Time to display some data! Django gives us some helpful built-in __template tags__ for that.
+Sometimes you want parts of your website to display dynamic data - that is, data that might be different every time someone opens your website. In that case, plain HTML won't be enough. Luckily, Django templates allow us to do a lot more than just write HTML. We can display some Python variables that we defined in our view. Django also gives us some helpful built-in __template tags__ for displaying data.
 
 ## What are template tags?
 
@@ -8,97 +8,34 @@ You see, in HTML, you can't really write Python code, because browsers don't und
 
 __Django template tags__ allow us to transfer Python-like things into HTML, so you can build dynamic websites faster and easier. Cool!
 
-## Display post list template
+## Display the current date and time
 
-In the previous chapter we gave our template a list of posts in the `posts` variable. Now we will display it in HTML.
-
-To print a variable in Django templates, we use double curly brackets with the variable's name inside, like this:
+Let's say we want to show the current date when a visitor loads our site. Django provides a __template tag__ just for that: `{% now %}`. You can insert the `{% now %}` tag anywhere in your template and the current date will be displayed when you visit the page in the browser. This is how it looks like when you use it in your template alongside regular HTML:
 
 {% filename %}blog/templates/blog/post_list.html{% endfilename %}
 ```html
-{{ posts }}
+<p>Hello! It is {% now "SHORT_DATE_FORMAT" %}</p>
 ```
 
-Try this in your `blog/templates/blog/post_list.html` template. Replace everything from the second `<div>` to the third `</div>` with `{{ posts }}`. Save the file, and refresh the page to see the results:
+For now let's create a new line and add it right before the closing `</body>` tag in our `index.html` template. The bottom of the file should look like this:
 
-![Figure 13.1](images/step1.png)
-
-As you can see, all we've got is this:
-
-{% filename %}blog/templates/blog/post_list.html{% endfilename %}
+{% filename %}blog/templates/blog/index.html{% endfilename %}
 ```html
-[<Post: My second post>, <Post: My first post>]
+        <p>Hello! It is {% now "SHORT_DATE_FORMAT" %}</p>
+    </body>
+</html>
 ```
 
-This means that Django understands it as a list of objects. Remember from __Introduction to Python__ how we can display lists? Yes, with for loops! In a Django template you do them like this:
+Save your changes and open http://127.0.0.1:8000/ in your browser to see if it worked. You should see something like `Hello! It is 22/07/2016` at the bottom of the page. Take a moment to think about what we just did: we are showing the current date without actually having to type it in! By using the `{% now %}` tag we're telling Django to figure out what's the current date and then insert that in the HTML that the browser reads. Django will show the correct date today, tomorrow, and forever, because it will use Python to check the calendar whenever a user asks to see the page.
 
-{% filename %}blog/templates/blog/post_list.html{% endfilename %}
-```html
-{% for post in posts %}
-    {{ post }}
-{% endfor %}
-```
+You may have noticed that we typed `"SHORT_DATE_FORMAT"` inside the `{% now %}` tag. Just like Python functions, template tags accept arguments. The arguments you pass to a template tag modify its behavior. In this case, we're telling the `{% now %}` tag to display the current date in a short format (that's why you see "22/07/2016" instead of something longer like "Friday, July 22, 2016").
 
-Try this in your template.
+Let's play with the arguments of the `{% now %}` tag. Replace `"SHORT_DATE_FORMAT"` with `"SHORT_DATETIME_FORMAT"` (don't forget the quotes). Reload the page and you should see something like `Hello! It is 07/22/2016 3:39 p.m.`. Did you notice the difference? Django has also included the current time after the date. If you wait for one minute and reload the page, you should see that the time displayed in your page changes as the minutes pass.
 
-![Figure 13.2](images/step2.png)
+The `{% now %}` tag is just one of many that are built into Django, and you can even create your own! They can do all sort of things to spice up your static HTML with dynamic Python behavior. You will learn more about Django template tags in later chapters.
 
-It works! But we want the posts to be displayed like the static posts we created earlier in the __Introduction to HTML__ chapter. You can mix HTML and template tags. Our `body` will look like this:
+## Display the date and time in the About page
 
-{% filename %}blog/templates/blog/post_list.html{% endfilename %}
-```html
-<div>
-    <h1><a href="/">Django Girls Blog</a></h1>
-</div>
+Open http://127.0.0.1:8000/about/ in your browser and you will see that the date and time are not displayed there. This is because you modified the `blog/templates/blog/index.html` template, and the `/about/` URL uses the `blog/templates/blog/about.html` template. To fix this, copy the piece of code you just added in `index.html` and paste it in `about.html`. Now save your changes and reload the page in your browser and the time and date should appear in the About page as they did in the previous page.
 
-{% for post in posts %}
-    <div>
-        <p>published: {{ post.published_date }}</p>
-        <h1><a href="">{{ post.title }}</a></h1>
-        <p>{{ post.text|linebreaksbr }}</p>
-    </div>
-{% endfor %}
-```
-
-{% raw %}Everything you put between `{% for %}` and `{% endfor %}` will be repeated for each object in the list. Refresh your page:{% endraw %}
-
-![Figure 13.3](images/step3.png)
-
-Have you noticed that we used a slightly different notation this time (`{{ post.title }}` or `{{ post.text }})`? We are accessing data in each of the fields defined in our `Post` model. Also, the `|linebreaksbr` is piping the posts' text through a filter to convert line-breaks into paragraphs.
-
-
-## One more thing
-
-It'd be good to see if your website will still be working on the public Internet, right? Let's try deploying to PythonAnywhere again. Here's a recap of the steps…
-
-* First, push your code to Github
-
-{% filename %}command-line{% endfilename %}
-```
-$ git status
-[...]
-$ git add --all .
-$ git status
-[...]
-$ git commit -m "Modified templates to display posts from database."
-[...]
-$ git push
-```
-
-* Then, log back in to [PythonAnywhere](https://www.pythonanywhere.com/consoles/) and go to your **Bash console** (or start a new one), and run:
-
-{% filename %}command-line{% endfilename %}
-```
-$ cd my-first-blog
-$ git pull
-[...]
-```
-
-* Finally, hop on over to the [Web tab](https://www.pythonanywhere.com/web_app_setup/) and hit **Reload** on your web app. Your update should be live! If the blog posts on your PythonAnywhere site don't match the posts appearing on the blog hosted on your local server, that's OK. The databases on your local computer and Python Anywhere don't sync with the rest of your files.
-
-
-Congrats! Now go ahead and try adding a new post in your Django admin (remember to add published_date!) Make sure you are in the Django admin for your pythonanywhere site, https://yourname.pythonanywhere.com/admin. Then refresh your page to see if the post appears there.
-
-Works like a charm? We're proud! Step away from your computer for a bit – you have earned a break. :)
-
-![Figure 13.4](images/donut.png)
+Copying and pasting code between templates is fine when you only have a few of them. However, it can be very annoying and error-prone if you have to do it a lot of times as the number of pages grows. Can you imagine having to do that when your site has 5, 10, or 50 pages? That would be no fun! We will see how Django can help us reduce the repetition in the next chapter.

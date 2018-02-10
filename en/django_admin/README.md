@@ -36,6 +36,8 @@ Superuser created successfully.
 
 Return to your browser. Log in with the superuser's credentials you chose; you should see the Django admin dashboard.
 
+> TODO: update screenshot (because we haven't implemented `__str__()` yet) and add the definition of `__str__()` here to correct the default behaviour
+
 ![Django admin](images/django_admin3.png)
 
 Go to Posts and experiment a little bit with it. Add five or six blog posts. Don't worry about the content – you can simply copy-paste some text from this tutorial to save time. :)

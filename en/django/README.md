@@ -1,6 +1,14 @@
+# What's our next step?
+
+So far we've seen the building blocks of every website - HTML and CSS. We used them to prepare our own webpage. But how could we show this webpage to others? And can we open our website directly from the browser, so we don't have to look for `index.html` in our finder every time? Or what if we wanted our website to be available at `/blog/` instead?
+
+In order to achieve these things, we are going to need some help. Enter Django.
+
 # What is Django?
 
-Django (/ˈdʒæŋɡoʊ/ _jang-goh_) is a free and open source web application framework, written in Python. A web framework is a set of components that helps you to develop websites faster and easier.
+> TODO Until now, we were looking at files directly - let's have Django serve them instead  
+
+Django (_/ˈdʒæŋɡoʊ/ jang-goh_) is a free and open source web application framework, written in Python. A web framework is a set of components that helps you to develop websites faster and easier.
 
 When you're building a website, you always need a similar set of components: a way to handle user authentication (signing up, signing in, signing out), a management panel for your website, forms, a way to upload files, etc.
 
@@ -16,7 +24,9 @@ Imagine a mailbox (port) which is monitored for incoming letters (requests). Thi
 
 ## What happens when someone requests a website from your server?
 
-When a request comes to a web server, it's passed to Django which tries to figure out what is actually requested. It takes a web page address first and tries to figure out what to do. This part is done by Django's __urlresolver__ (note that a website address is called a URL – Uniform Resource Locator – so the name *urlresolver* makes sense). It is not very smart – it takes a list of patterns and tries to match the URL. Django checks patterns from top to bottom and if something is matched, then Django passes the request to the associated function (which is called *view*).
+> TODO: Maybe simplify the following part. Do we really need it at this point, or can we move it in later chapters? Is there value in explaining all of this here? Seems like explaining urlresolver and views would make more sense a bit later (maybe in the urls chapter)
+
+When a request comes to a web server it's passed to Django which tries to figure out what actually is requested. It takes a webpage address first and tries to figure out what to do. This part is done by Django's __urlresolver__ (note that a website address is called a URL - Uniform Resource Locator - so the name *urlresolver* makes sense). It is not very smart - it takes a list of patterns and tries to match the URL. Django checks patterns from top to the bottom and if something is matched then Django passes the request to the associated function (which is called *view*).
 
 Imagine a mail carrier with a letter. She is walking down the street and checks each house number against the one on the letter. If it matches, she puts the letter there. This is how the urlresolver works!
 
