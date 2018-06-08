@@ -1,3 +1,7 @@
+## About this fork
+
+This fork was used to implement the changes proposed in https://github.com/DjangoGirls/tutorial/issues/481 . Due to lack of interest to merge these changes back into the official tutorial, this work was never completely finished. 
+
 # Django Girls Tutorial
 
 This is the source code repository for the Django Girls Tutorial. Django Girls Tutorial is used on [tutorial.djangogirls.org](http://tutorial.djangogirls.org) so if you want to read it, please go there. If you want to contribute please do go further with this file.
